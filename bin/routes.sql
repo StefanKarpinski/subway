@@ -27,11 +27,19 @@ create table route_trips as
 	from trip_route_stops natural join routes_tmp
 	order by route, trip;
 
+create index route_trips_route_idx on route_trips (route);
+create index route_trips_trip_idx on route_trips (trip);
+
 create table route_codes as
 	select distinct route, code
 	from route_trips natural join trip_codes
 	order by route, code;
 
+create index route_codes_route_idx on route_codes (route);
+create index route_codes_trip_idx on route_codes (code);
+
 create table routes as
 	select route, direction, count
 	from routes_tmp;
+
+create unique index routes_route_idx on routes (route);
