@@ -1,5 +1,3 @@
-drop table routes, route_trips, route_codes cascade;
-
 create temp view trip_codes as
 	select distinct trip, code
 	from stops order by trip, code;
@@ -21,7 +19,7 @@ from trip_code_list_dirs
 group by code_list, direction
 order by code_list, direction;
 
-create table route_trips as
+create temp table route_trips as
 	select route, trip
 	from route_dir_code_lists natural join trip_code_list_dirs
 	order by route, trip;
@@ -30,20 +28,22 @@ create unique index route_trips_route_trip_idx on route_trips(route,trip);
 create unique index route_trips_trip_idx on route_trips (trip);
 create index route_trips_route_idx on route_trips (route);
 
-create table route_codes as
+drop table route_stops cascade;
+create table route_stops as
 	select distinct route, code
 	from route_trips natural join trip_codes
 	order by route, code;
 
-create unique index route_codes_route_code_idx on route_codes(route,code);
-create index route_codes_route_idx on route_codes (route);
-create index route_codes_trip_idx on route_codes (code);
+create unique index route_stops_route_code_idx on route_stops(route,code);
+create index route_stops_route_idx on route_stops (route);
+create index route_stops_trip_idx on route_stops (code);
 
+drop table routes cascade;
 create table routes as select
 	route, trip_line, line, direction, orig_code,	dest_code, stops, trips
 from route_trips
 	natural join trips
-	natural join (select route, count(*) as stops from route_codes group by route) cx
+	natural join (select route, count(*) as stops from route_stops group by route) sx
 	natural join (select route, count(*) as trips from route_trips group by route) tx
 group by route, trip_line, line, direction, orig_code,	dest_code, stops, trips
 order by
@@ -55,15 +55,22 @@ order by
 	direction,
 	trips;
 
-create unique index routes_route_idx on routes (route);
+alter table routes add primary key (route);
+alter table trips drop column route;
+alter table trips add column route integer references routes;
+update trips set route = route_trips.route
+	from route_trips where trips.trip = route_trips.trip;
 
-create temp view trip_line_avg_trips as
+create index trips_route_idx on trips (route);
+
+create temp view line_avg_trips as
 	select trip_line, avg(trips) as avg_trips
 	from routes group by trip_line order by trip_line;
 
+drop table routes_main cascade;
 create table routes_main as
 	select routes.*
-	from routes natural join trip_line_avg_trips
+	from routes natural join line_avg_trips
 	where trips >= avg_trips;
 
 create unique index routes_main_route_idx on routes_main (route);
