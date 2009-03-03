@@ -1,6 +1,3 @@
-delete from stops where not stop;
-alter table stops drop column stop;
-
 create index stops_trip_idx on stops (trip);
 create index stops_code_idx on stops (code);
 create index stops_time_idx on stops (time);

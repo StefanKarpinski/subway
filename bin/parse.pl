@@ -96,12 +96,11 @@ sub event {
 	my $time = timeval parse 8;
 	my $type = string parse 2;
 	my $stop = string parse 1;
+  return unless $stop eq 'S';
 	my $timepoint = string parse 1;
-	$stop = $stop eq 'S' ? 't' : 'f';
 	$timepoint = $timepoint eq 'Y' ? 't' : 'f';
 	print_record $stops,
-		$trip,	$code, $track, $time,
-		$type, $stop,	$timepoint;
+		$trip,	$code, $track, $time,	$type, $timepoint;
 }
 
 # main parsing loop

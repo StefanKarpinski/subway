@@ -1,7 +1,4 @@
 drop table stations cascade;
-drop table trips cascade;
-drop table stops cascade;
-
 create table stations (
 	line text,
 	code text primary key,
@@ -11,6 +8,7 @@ create table stations (
 	y integer
 );
 
+drop table trips cascade;
 create table trips (
 	trip integer primary key,
 	line text,
@@ -23,16 +21,18 @@ create table trips (
 	trip_line text
 );
 
+drop table stops cascade;
 create table stops (
 	trip integer references trips on delete cascade,
 	code text references stations on delete cascade,
 	track text,
 	time real,
 	type text,
-	stop boolean,
-	timepoint boolean
+	tp boolean,
+	primary key (trip,code,type)
 );
 
+drop aggregate array_accum (anyelement);
 create aggregate array_accum (anyelement)
 (
     sfunc = array_append,
