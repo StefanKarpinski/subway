@@ -1,3 +1,5 @@
+delete from trips where service <> 1;
+
 create view stop_codes as
 	select distinct code from stops where stop;
 
