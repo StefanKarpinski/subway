@@ -21,7 +21,7 @@ sub string {
 	$x =~ s/^\s+//;
 	$x =~ s/\s+$//;
 	$x =~ s/\s+/ /g;
-	$x = length($_) ? qq['$x'] : undef;
+	$x = length($x) ? $x : undef;
 }
 sub integer {
 	my $x = shift;
@@ -32,17 +32,13 @@ sub timeval {
 	my $x = shift;
 	$x =~ /^\s*$/ and return undef;
 	$x =~ /^\s*([-+]?\s*\d+)\s*$/ or croak "Invalid time value: $x";
-	my $mins = $1/100;
-	$x = "interval '$mins minutes'"
+	$x = $x/100;
 }
 
-sub insert_into {
-	my ($table,%data) = @_;
-	my @fields = sort keys %data;
-	my @values = @data{@fields};
-	my $fields = join ',', @fields;
-	my $values = join ',', map {defined($_) ? $_ : "NULL"} @values;
-	print "insert into $table ($fields) values ($values);\n";
+sub print_record {
+	my $file = shift;
+	my @data = map { defined($_) ? $_ : "NULL" } @_;
+	$file->print( join("\t", @data), "\n");
 }
 
 # parsing subroutines
@@ -50,6 +46,15 @@ sub insert_into {
 our $line;
 our $service;
 our $trip_id = 0;
+our %codes;
+
+open our $stations, ">data/stations.tab" or croak $!;
+open our $trips, ">data/trips.tab" or croak $!;
+open our $stops, ">data/stops.tab" or croak $!;
+
+$stations->autoflush(1);
+$trips->autoflush(1);
+$stops->autoflush(0);
 
 sub timetable {
 	$line = string parse 4;
@@ -58,17 +63,13 @@ sub timetable {
 
 sub geography {
 	my $code = string parse 8;
+	return if $codes{$code}++;
 	my $short = string parse 8;
 	my $long = string parse 33;
 	my $x = integer parse 6;
 	my $y = integer parse 6;
-	my $coords = $x && $y ? qq['($x,$y)'] : undef;
-	insert_into "stations",
-		line	 => $line,
-		code	 => $code,
-		short  => $short,
-		long	 => $long,
-		coords => $coords;
+	print_record $stations,
+		$line, $code,	$short,	$long, $x, $y;
 }
 
 sub applicability { }
@@ -83,16 +84,10 @@ sub trip {
 	my $dest_time = timeval parse 8;
 	parse 10+6+12; # skip fields
 	my $trip_line = string parse 4;
-	insert_into "trips",
-		id		    => ++$trip_id,
-		line			=> $line,
-		service   => $service,
-		orig_code	=> $orig_code,
-		orig_time	=> $orig_time,
-		dest_code	=> $dest_code,
-		dest_time	=> $dest_time,
-		direction	=> $direction,
-		trip_line => $trip_line;
+	print_record $trips,
+		++$trip_id,	$line, $service, $direction,
+		$orig_code,	$orig_time,	$dest_code,	$dest_time,
+		$trip_line;
 }
 
 sub event {
@@ -102,16 +97,11 @@ sub event {
 	my $type = string parse 2;
 	my $stop = string parse 1;
 	my $timepoint = string parse 1;
-	$stop = $stop eq 'S' ? 'true' : 'false';
-	$timepoint = $timepoint eq 'Y' ? 'true' : 'false';
-	insert_into "stops",
-		trip_id		=> $trip_id,
-		code			=> $code,
-		track			=> $track,
-		time			=> $time,
-		type			=> $type,
-		stop			=> $stop,
-		timepoint	=> $timepoint;
+	$stop = $stop eq 'S' ? 't' : 'f';
+	$timepoint = $timepoint eq 'Y' ? 't' : 'f';
+	print_record $stops,
+		$trip_id,	$code, $track, $time,
+		$type, $stop,	$timepoint;
 }
 
 # main parsing loop

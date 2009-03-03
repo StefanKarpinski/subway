@@ -7,7 +7,8 @@ create table stations (
 	code text primary key,
 	short text,
 	long text,
-	coords point
+	x integer,
+	y integer
 );
 
 create table trips (
@@ -16,9 +17,9 @@ create table trips (
 	service int,
 	direction text,
 	orig_code text references stations (code),
+	orig_time real,
 	dest_code text references stations (code),
-	orig_time interval,
-	dest_time interval,
+	dest_time real,
 	trip_line text
 );
 
@@ -26,7 +27,7 @@ create table stops (
 	trip_id int references trips,
 	code text references stations,
 	track text,
-	time interval,
+	time real,
 	type text,
 	stop boolean,
 	timepoint boolean
