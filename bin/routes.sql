@@ -56,3 +56,14 @@ order by
 	trips;
 
 create unique index routes_route_idx on routes (route);
+
+create temp view trip_line_avg_trips as
+	select trip_line, avg(trips) as avg_trips
+	from routes group by trip_line order by trip_line;
+
+create table routes_main as
+	select routes.*
+	from routes natural join trip_line_avg_trips
+	where trips >= avg_trips;
+
+create unique index routes_main_route_idx on routes_main (route);
