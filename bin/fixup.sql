@@ -8,3 +8,6 @@ create view real_stations as
 update stops set code='718' where code='R09';
 delete from stations where code not in (select code from real_stations);
 drop view stop_codes cascade;
+
+delete from stops where not stop;
+alter table stops drop column stop;
