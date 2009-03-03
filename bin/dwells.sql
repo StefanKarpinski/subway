@@ -1,4 +1,6 @@
-create table dwells_nonzero as select
+drop table dwells, dwells_aggregate cascade;
+
+create temp view dwells_nonzero as select
 	trip,
 	trip_line,
 	direction,
@@ -14,7 +16,7 @@ from trips
 where
 	i.index + 1 = o.index;
 
-create table dwells_zero as select
+create temp view dwells_zero as select
 	trip,
 	trip_line,
 	direction,
@@ -27,7 +29,7 @@ create table dwells_zero as select
 from trips
 	join stops using (trip);
 
-create view dwells as
+create table dwells as
 	select * from dwells_nonzero union
 	select * from dwells_zero;
 
@@ -54,5 +56,3 @@ order by
 	dest_code,
 	orig_code,
 	code;
-
-delete from dwells_aggregate where max_time = 0;
