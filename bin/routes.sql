@@ -27,8 +27,8 @@ create table route_trips as
 	order by route, trip;
 
 create unique index route_trips_route_trip_idx on route_trips(route,trip);
+create unique index route_trips_trip_idx on route_trips (trip);
 create index route_trips_route_idx on route_trips (route);
-create index route_trips_trip_idx on route_trips (trip);
 
 create table route_codes as
 	select distinct route, code
@@ -40,12 +40,19 @@ create index route_codes_route_idx on route_codes (route);
 create index route_codes_trip_idx on route_codes (code);
 
 create table routes as select
-	route, line, trip_line,	direction, orig_code,	dest_code, codes, trips
+	route, trip_line, line, direction, orig_code,	dest_code, stops, trips
 from route_trips
 	natural join trips
-	natural join (select route, count(*) as codes from route_codes group by route) cx
+	natural join (select route, count(*) as stops from route_codes group by route) cx
 	natural join (select route, count(*) as trips from route_trips group by route) tx
-group by route, line, trip_line,	direction, orig_code,	dest_code, codes, trips
-order by route, line, trip_line,	direction, orig_code,	dest_code, codes, trips;
+group by route, trip_line, line, direction, orig_code,	dest_code, stops, trips
+order by
+	trip_line,
+	line,
+	stops desc,
+	case when orig_code < dest_code then orig_code else dest_code end,
+	case when orig_code > dest_code then orig_code else dest_code end,
+	direction,
+	trips;
 
 create unique index routes_route_idx on routes (route);
