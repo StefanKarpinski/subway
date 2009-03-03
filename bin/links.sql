@@ -1,3 +1,5 @@
+drop table links, links_aggregate cascade;
+
 create table links as select
 	trip,
 	trip_line,
