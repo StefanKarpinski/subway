@@ -45,7 +45,7 @@ sub print_record {
 
 our $line;
 our $service;
-our $trip_id = 0;
+our $trip = 0;
 our %codes;
 
 open our $stations, ">data/stations.tab" or croak $!;
@@ -85,7 +85,7 @@ sub trip {
 	parse 10+6+12; # skip fields
 	my $trip_line = string parse 4;
 	print_record $trips,
-		++$trip_id,	$line, $service, $direction,
+		++$trip,	$line, $service, $direction,
 		$orig_code,	$orig_time,	$dest_code,	$dest_time,
 		$trip_line;
 }
@@ -100,7 +100,7 @@ sub event {
 	$stop = $stop eq 'S' ? 't' : 'f';
 	$timepoint = $timepoint eq 'Y' ? 't' : 'f';
 	print_record $stops,
-		$trip_id,	$code, $track, $time,
+		$trip,	$code, $track, $time,
 		$type, $stop,	$timepoint;
 }
 

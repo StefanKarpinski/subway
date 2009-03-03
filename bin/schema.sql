@@ -12,7 +12,7 @@ create table stations (
 );
 
 create table trips (
-	id serial primary key,
+	trip integer primary key,
 	line text,
 	service int,
 	direction text,
@@ -24,7 +24,7 @@ create table trips (
 );
 
 create table stops (
-	trip_id int references trips on delete cascade,
+	trip integer references trips on delete cascade,
 	code text references stations on delete cascade,
 	track text,
 	time real,
