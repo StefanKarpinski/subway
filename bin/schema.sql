@@ -16,16 +16,16 @@ create table trips (
 	line text,
 	service int,
 	direction text,
-	orig_code text references stations (code),
+	orig_code text references stations on delete cascade,
 	orig_time real,
-	dest_code text references stations (code),
+	dest_code text references stations on delete cascade,
 	dest_time real,
 	trip_line text
 );
 
 create table stops (
-	trip_id int references trips,
-	code text references stations,
+	trip_id int references trips on delete cascade,
+	code text references stations on delete cascade,
 	track text,
 	time real,
 	type text,
