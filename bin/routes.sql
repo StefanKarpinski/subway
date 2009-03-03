@@ -28,8 +28,7 @@ create unique index route_trips_route_trip_idx on route_trips(route,trip);
 create unique index route_trips_trip_idx on route_trips (trip);
 create index route_trips_route_idx on route_trips (route);
 
-drop table route_stops cascade;
-create table route_stops as
+create temp table route_stops as
 	select distinct route, code
 	from route_trips natural join trip_codes
 	order by route, code;
