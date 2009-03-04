@@ -21,7 +21,7 @@ where
 	 o.time - i.time < 20
 group by code, trip_in, time_in, route_in, route_out;
 
-drop table station_xfers cascade;
+drop table if exists station_xfers cascade;
 create table station_xfers as select
 	code,
 	trip_in,
@@ -38,7 +38,7 @@ where
 	route = route_out and
 	time = time_out;
 
-drop table station_xfers_aggregate cascade;
+drop table if exists station_xfers_aggregate cascade;
 create table station_xfers_aggregate as select
 	code,
 	route_in,
@@ -78,7 +78,7 @@ where
 	 o.time - i.time < 20
 group by complex, code_in, code_out, trip_in, time_in, route_in, route_out;
 
-drop table complex_xfers cascade;
+drop table if exists complex_xfers cascade;
 create table complex_xfers as select
 	complex,
 	code_in,
@@ -97,7 +97,7 @@ where
 	route = route_out and
 	time = time_out;
 
-drop table complex_xfers_aggregate cascade;
+drop table if exists complex_xfers_aggregate cascade;
 create table complex_xfers_aggregate as select
 	complex,
 	code_in,

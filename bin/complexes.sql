@@ -1,4 +1,4 @@
-drop table complexes cascade;
+drop table if exists complexes cascade;
 create table complexes (complex integer primary key, name text);
 copy complexes from '/Users/stefan/projects/subway/data/complexes.csv' csv;
 

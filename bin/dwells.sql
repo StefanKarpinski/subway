@@ -1,3 +1,4 @@
+drop table if exists dwells cascade;
 create table dwells as select
 	trip, route, code,
 	i.time as time_in,
@@ -10,7 +11,7 @@ where
 	(i.type = 'A' and o.type = 'D') or
 	(i.type = 'T' and o.type = 'T');
 
-drop table dwells_aggregate cascade;
+drop table if exists dwells_aggregate cascade;
 create table dwells_aggregate as select
 	route, code,
 	avg(time) as avg_time,

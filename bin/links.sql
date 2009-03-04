@@ -1,4 +1,4 @@
-drop table links cascade;
+drop table if exists links cascade;
 create table links as select
 	trip, route,
 	o.code as code_out,
@@ -14,7 +14,7 @@ where
 	(i.type = 'A' or i.type = 'T') and
 	 o.stop + 1 = i.stop;
 
-drop table links_aggregate cascade;
+drop table if exists links_aggregate cascade;
 create table links_aggregate as select
 	route, code_out, code_in,
 	avg(time) as avg_time,
