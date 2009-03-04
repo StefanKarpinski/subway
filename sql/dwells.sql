@@ -1,15 +1,15 @@
 drop table if exists dwells cascade;
 create table dwells as select
 	trip, route, code,
-	i.time as time_in,
-	o.time as time_out,
-	o.time - i.time as time
+	arrive.time as arrive_time,
+	depart.time as depart_time,
+	depart.time - arrive.time as time
 from trips
-	join stops i using (trip)
-	join stops o using (trip,code,stop)
+	join stops arrive using (trip)
+	join stops depart using (trip,code,stop)
 where
-	(i.type = 'A' and o.type = 'D') or
-	(i.type = 'T' and o.type = 'T');
+	(arrive.type = 'A' and depart.type = 'D') or
+	(arrive.type = 'T' and depart.type = 'T');
 
 drop table if exists dwells_aggregate cascade;
 create table dwells_aggregate as select

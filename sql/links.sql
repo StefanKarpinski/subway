@@ -1,27 +1,27 @@
 drop table if exists links cascade;
 create table links as select
 	trip, route,
-	o.code as code_out,
-	i.code as code_in,
-	o.time as time_out,
-	i.time as time_in,
-	i.time - o.time as time
+	depart.code as depart_code,
+	arrive.code as arrive_code,
+	depart.time as depart_time,
+	arrive.time as arrive_time,
+	arrive.time - depart.time as time
 from trips
-	join stops o using (trip)
-	join stops i using (trip)
+	join stops depart using (trip)
+	join stops arrive using (trip)
 where
-	(o.type = 'D' or o.type = 'T') and
-	(i.type = 'A' or i.type = 'T') and
-	 o.stop + 1 = i.stop;
+	(depart.type = 'D' or depart.type = 'T') and
+	(arrive.type = 'A' or arrive.type = 'T') and
+	 depart.stop + 1 = arrive.stop;
 
 drop table if exists links_aggregate cascade;
 create table links_aggregate as select
-	route, code_out, code_in,
+	route, depart_code, arrive_code,
 	avg(time) as avg_time,
 	stddev_samp(time) as std_time,
 	min(time) as min_time,
 	max(time) as max_time,
 	count(time) as count
 from links
-group by route, code_out, code_in
-order by route, code_out, code_in;
+group by route, depart_code, arrive_code
+order by route, depart_code, arrive_code;

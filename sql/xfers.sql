@@ -15,85 +15,85 @@ from stops_augmented stops
 
 create temp table station_min_xfers as select
 	code,
-	i.trip as trip_in,
-	i.route as route_in,
-	o.route as route_out,
-	i.time as time_in,
-	min(o.time) as time_out,
-	min(o.time) - i.time as min_xfer
+	arrive.trip as arrive_trip,
+	arrive.route as arrive_route,
+	depart.route as depart_route,
+	arrive.time as arrive_time,
+	min(depart.time) as depart_time,
+	min(depart.time) - arrive.time as min_xfer
 from
-	stops_with_route i join
-	stops_with_route o using (code)
+	stops_with_route arrive join
+	stops_with_route depart using (code)
 where
-	(i.type = 'A' or i.type = 'T') and
-	(o.type = 'D' or o.type = 'T') and
-	 i.route <> o.route and
-	 o.time - i.time > 0 and
-	 o.time - i.time <= 25
-group by code, trip_in, time_in, route_in, route_out;
+	(arrive.type = 'A' or arrive.type = 'T') and
+	(depart.type = 'D' or depart.type = 'T') and
+	 arrive.route <> depart.route and
+	 depart.time - arrive.time > 0 and
+	 depart.time - arrive.time <= 25
+group by code, arrive_trip, arrive_time, arrive_route, depart_route;
 
 create temp table station_xfers_tmp as select
 	code,
-	trip_in,
-	trip as trip_out,
-	route_in,
-	route_out,
-	time_in,
-	time_out,
-	case when time_in < 1440 then time_in else time_in - 1440 end as mod_time_in,
-	case when time_out < 1440 then time_out else time_out - 1440 end as mod_time_out,
+	arrive_trip,
+	trip as depart_trip,
+	arrive_route,
+	depart_route,
+	arrive_time,
+	depart_time,
+	case when arrive_time < 1440 then arrive_time else arrive_time - 1440 end as arrive_mod_time,
+	case when depart_time < 1440 then depart_time else depart_time - 1440 end as depart_mod_time,
 	min_xfer as xfer_time
 from
 	station_min_xfers join
 	stops_with_route using (code)
 where
-	route = route_out and
-	time = time_out;
+	route = depart_route and
+	time = depart_time;
 
 drop table if exists station_xfers cascade;
 create table station_xfers as select
 	distinct on (
 		code,
-		trip_in,
-		trip_out,
-		mod_time_in,
-		mod_time_out
+		arrive_trip,
+		depart_trip,
+		arrive_mod_time,
+		depart_mod_time
 	)
 	code,
-	trip_in,
-	trip_out,
-	route_in,
-	route_out,
-	time_in,
-	time_out,
+	arrive_trip,
+	depart_trip,
+	arrive_route,
+	depart_route,
+	arrive_time,
+	depart_time,
 	xfer_time
 from station_xfers_tmp
 order by
 	code,
-	trip_in,
-	trip_out,
-	mod_time_in,
-	mod_time_out,
-	time_in,
-	time_out;
+	arrive_trip,
+	depart_trip,
+	arrive_mod_time,
+	depart_mod_time,
+	arrive_time,
+	depart_time;
 
-alter table station_xfers add primary key (code,trip_in,trip_out);
+alter table station_xfers add primary key (code,arrive_trip,depart_trip);
 
 drop table if exists station_xfers_aggregate cascade;
 create table station_xfers_aggregate as select
 	code,
-	route_in,
-	route_out,
+	arrive_route,
+	depart_route,
 	avg(xfer_time) as avg_xfer,
 	stddev_samp(xfer_time) as stddev,
 	min(xfer_time) as min_xfer,
 	max(xfer_time) as max_xfer,
 	count(xfer_time) as count
 from station_xfers
-group by code, route_in, route_out
-order by code, route_in, route_out;
+group by code, arrive_route, depart_route
+order by code, arrive_route, depart_route;
 
-alter table station_xfers_aggregate add primary key (code,route_in,route_out);
+alter table station_xfers_aggregate add primary key (code,arrive_route,depart_route);
 
 create temp view stops_with_complex as select
 	stops.*, route, complex
@@ -104,96 +104,96 @@ where complex is not null;
 
 create temp table complex_min_xfers as select
 	complex,
-	i.code as code_in,
-	o.code as code_out,
-	i.trip as trip_in,
-	i.route as route_in,
-	o.route as route_out,
-	i.time as time_in,
-	min(o.time) as time_out,
-	min(o.time) - i.time as min_xfer
+	arrive.code as arrive_code,
+	depart.code as depart_code,
+	arrive.trip as arrive_trip,
+	arrive.route as arrive_route,
+	depart.route as depart_route,
+	arrive.time as arrive_time,
+	min(depart.time) as depart_time,
+	min(depart.time) - arrive.time as min_xfer
 from
-	stops_with_complex i join
-	stops_with_complex o using (complex)
+	stops_with_complex arrive join
+	stops_with_complex depart using (complex)
 where
-	(i.type = 'A' or i.type = 'T') and
-	(o.type = 'D' or o.type = 'T') and
-	 i.code <> o.code and
-	 o.time - i.time > 2 and
-	 o.time - i.time <= 25
-group by complex, code_in, code_out, trip_in, time_in, route_in, route_out;
+	(arrive.type = 'A' or arrive.type = 'T') and
+	(depart.type = 'D' or depart.type = 'T') and
+	 arrive.code <> depart.code and
+	 depart.time - arrive.time > 2 and
+	 depart.time - arrive.time <= 25
+group by complex, arrive_code, depart_code, arrive_trip, arrive_time, arrive_route, depart_route;
 
 create temp table complex_xfers_tmp as select
 	complex,
-	code_in,
-	code_out,
-	trip_in,
-	trip as trip_out,
-	route_in,
-	route_out,
-	time_in,
-	time_out,
-	case when time_in < 1440 then time_in else time_in - 1440 end as mod_time_in,
-	case when time_out < 1440 then time_out else time_out - 1440 end as mod_time_out,
+	arrive_code,
+	depart_code,
+	arrive_trip,
+	trip as depart_trip,
+	arrive_route,
+	depart_route,
+	arrive_time,
+	depart_time,
+	case when arrive_time < 1440 then arrive_time else arrive_time - 1440 end as arrive_mod_time,
+	case when depart_time < 1440 then depart_time else depart_time - 1440 end as depart_mod_time,
 	min_xfer as xfer_time
 from
 	complex_min_xfers join
 	stops_with_complex using (complex)
 where
-	route = route_out and
-	time = time_out;
+	route = depart_route and
+	time = depart_time;
 
 drop table if exists complex_xfers cascade;
 create table complex_xfers as select
 	distinct on (
 		complex,
-		code_in,
-		code_out,
-		trip_in,
-		trip_out,
-		mod_time_in,
-		mod_time_out
+		arrive_code,
+		depart_code,
+		arrive_trip,
+		depart_trip,
+		arrive_mod_time,
+		depart_mod_time
 	)
 	complex,
-	code_in,
-	code_out,
-	trip_in,
-	trip_out,
-	route_in,
-	route_out,
-	time_in,
-	time_out,
+	arrive_code,
+	depart_code,
+	arrive_trip,
+	depart_trip,
+	arrive_route,
+	depart_route,
+	arrive_time,
+	depart_time,
 	xfer_time
 from complex_xfers_tmp
 order by
 	complex,
-	code_in,
-	code_out,
-	trip_in,
-	trip_out,
-	mod_time_in,
-	mod_time_out,
-	time_in,
-	time_out;
+	arrive_code,
+	depart_code,
+	arrive_trip,
+	depart_trip,
+	arrive_mod_time,
+	depart_mod_time,
+	arrive_time,
+	depart_time;
 
 alter table complex_xfers add primary key
-	(complex,code_in,code_out,trip_in,trip_out);
+	(complex,arrive_code,depart_code,arrive_trip,depart_trip);
 
 drop table if exists complex_xfers_aggregate cascade;
 create table complex_xfers_aggregate as select
 	complex,
-	code_in,
-	code_out,
-	route_in,
-	route_out,
+	arrive_code,
+	depart_code,
+	arrive_route,
+	depart_route,
 	avg(xfer_time) as avg_xfer,
 	stddev_samp(xfer_time) as stddev,
 	min(xfer_time) as min_xfer,
 	max(xfer_time) as max_xfer,
 	count(xfer_time) as count
 from complex_xfers
-group by complex, code_in, code_out, route_in, route_out
-order by complex, code_in, code_out, route_in, route_out;
+group by complex, arrive_code, depart_code, arrive_route, depart_route
+order by complex, arrive_code, depart_code, arrive_route, depart_route;
 
 alter table complex_xfers_aggregate add primary key
-	(complex,code_in,code_out,route_in,route_out);
+	(complex,arrive_code,depart_code,arrive_route,depart_route);
