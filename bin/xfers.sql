@@ -17,7 +17,7 @@ where
 	(i.type = 'A' or i.type = 'T') and
 	(o.type = 'D' or o.type = 'T') and
 	 i.route <> o.route and
-	 o.time - i.time > 0 and
+	 o.time - i.time > 1 and
 	 o.time - i.time < 20
 group by code, trip_in, time_in, route_in, route_out;
 
@@ -74,7 +74,7 @@ where
 	(i.type = 'A' or i.type = 'T') and
 	(o.type = 'D' or o.type = 'T') and
 	 i.code <> o.code and
-	 o.time - i.time > 0 and
+	 o.time - i.time > 3 and
 	 o.time - i.time < 20
 group by complex, code_in, code_out, trip_in, time_in, route_in, route_out;
 
