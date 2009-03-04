@@ -14,6 +14,8 @@ where
 	(arrive.type = 'A' or arrive.type = 'T') and
 	 depart.stop + 1 = arrive.stop;
 
+alter table links add primary key (trip,depart_code,arrive_code);
+
 drop table if exists links_aggregate cascade;
 create table links_aggregate as select
 	route, depart_code, arrive_code,
@@ -25,3 +27,5 @@ create table links_aggregate as select
 from links
 group by route, depart_code, arrive_code
 order by route, depart_code, arrive_code;
+
+alter table links_aggregate add primary key (route,depart_code,arrive_code);

@@ -11,6 +11,8 @@ where
 	(arrive.type = 'A' and depart.type = 'D') or
 	(arrive.type = 'T' and depart.type = 'T');
 
+alter table dwells add primary key (trip,code);
+
 drop table if exists dwells_aggregate cascade;
 create table dwells_aggregate as select
 	route, code,
@@ -21,3 +23,5 @@ create table dwells_aggregate as select
 	count(time) as count
 from dwells group by route, code
 order by route, code;
+
+alter table dwells_aggregate add primary key (route,code);
