@@ -119,7 +119,7 @@ where
 	(arrive.type = 'A' or arrive.type = 'T') and
 	(depart.type = 'D' or depart.type = 'T') and
 	 arrive.code <> depart.code and
-	 depart.time - arrive.time > 2 and
+	 depart.time - arrive.time >= 2 and
 	 depart.time - arrive.time <= 25
 group by complex, arrive_code, depart_code, arrive_trip, arrive_time, arrive_route, depart_route;
 
