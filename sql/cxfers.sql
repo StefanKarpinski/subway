@@ -15,7 +15,7 @@ from stops_augmented stops
 	join stations using (code)
 where complex is not null;
 
-create temp table complex_min_xfers as select
+create temp table cxfers_min as select
 	complex,
 	arrive.code as arrive_code,
 	depart.code as depart_code,
@@ -36,7 +36,7 @@ where
 	 depart.time - arrive.time <= 25
 group by complex, arrive_code, depart_code, arrive_trip, arrive_time, arrive_route, depart_route;
 
-create temp table complex_xfers_tmp as select
+create temp table cxfers_tmp as select
 	complex,
 	arrive_code,
 	depart_code,
@@ -50,14 +50,14 @@ create temp table complex_xfers_tmp as select
 	case when depart_time < 1440 then depart_time else depart_time - 1440 end as depart_mod_time,
 	min_xfer as xfer_time
 from
-	complex_min_xfers join
+	cxfers_min join
 	stops_with_complex using (complex)
 where
 	route = depart_route and
 	time = depart_time;
 
-drop table if exists complex_xfers cascade;
-create table complex_xfers as select
+drop table if exists cxfers cascade;
+create table cxfers as select
 	distinct on (
 		complex,
 		arrive_code,
@@ -77,7 +77,7 @@ create table complex_xfers as select
 	arrive_time,
 	depart_time,
 	xfer_time
-from complex_xfers_tmp
+from cxfers_tmp
 order by
 	complex,
 	arrive_code,
@@ -89,11 +89,11 @@ order by
 	arrive_time,
 	depart_time;
 
-alter table complex_xfers add primary key
+alter table cxfers add primary key
 	(complex,arrive_code,depart_code,arrive_trip,depart_trip);
 
-drop table if exists complex_xfers_by_route cascade;
-create table complex_xfers_by_route as select
+drop table if exists cxfers_by_route cascade;
+create table cxfers_by_route as select
 	complex,
 	arrive_code,
 	depart_code,
@@ -104,9 +104,9 @@ create table complex_xfers_by_route as select
 	min(xfer_time) as min_xfer,
 	max(xfer_time) as max_xfer,
 	count(xfer_time) as count
-from complex_xfers
+from cxfers
 group by complex, arrive_code, depart_code, arrive_route, depart_route
 order by complex, arrive_code, depart_code, arrive_route, depart_route;
 
-alter table complex_xfers_by_route add primary key
+alter table cxfers_by_route add primary key
 	(complex,arrive_code,depart_code,arrive_route,depart_route);

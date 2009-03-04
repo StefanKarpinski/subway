@@ -13,7 +13,7 @@ create temp view stops_with_route as select
 from stops_augmented stops
 	join trips using (trip);
 
-create temp table station_min_xfers as select
+create temp table sxfers_min as select
 	code,
 	arrive.trip as arrive_trip,
 	arrive.route as arrive_route,
@@ -32,7 +32,7 @@ where
 	 depart.time - arrive.time <= 25
 group by code, arrive_trip, arrive_time, arrive_route, depart_route;
 
-create temp table station_xfers_tmp as select
+create temp table sxfers_tmp as select
 	code,
 	arrive_trip,
 	trip as depart_trip,
@@ -44,14 +44,14 @@ create temp table station_xfers_tmp as select
 	case when depart_time < 1440 then depart_time else depart_time - 1440 end as depart_mod_time,
 	min_xfer as xfer_time
 from
-	station_min_xfers join
+	sxfers_min join
 	stops_with_route using (code)
 where
 	route = depart_route and
 	time = depart_time;
 
-drop table if exists station_xfers cascade;
-create table station_xfers as select
+drop table if exists sxfers cascade;
+create table sxfers as select
 	distinct on (
 		code,
 		arrive_trip,
@@ -67,7 +67,7 @@ create table station_xfers as select
 	arrive_time,
 	depart_time,
 	xfer_time
-from station_xfers_tmp
+from sxfers_tmp
 order by
 	code,
 	arrive_trip,
@@ -77,10 +77,10 @@ order by
 	arrive_time,
 	depart_time;
 
-alter table station_xfers add primary key (code,arrive_trip,depart_trip);
+alter table sxfers add primary key (code,arrive_trip,depart_trip);
 
-drop table if exists station_xfers_by_route cascade;
-create table station_xfers_by_route as select
+drop table if exists sxfers_by_route cascade;
+create table sxfers_by_route as select
 	code,
 	arrive_route,
 	depart_route,
@@ -89,8 +89,8 @@ create table station_xfers_by_route as select
 	min(xfer_time) as min_xfer,
 	max(xfer_time) as max_xfer,
 	count(xfer_time) as count
-from station_xfers
+from sxfers
 group by code, arrive_route, depart_route
 order by code, arrive_route, depart_route;
 
-alter table station_xfers_by_route add primary key (code,arrive_route,depart_route);
+alter table sxfers_by_route add primary key (code,arrive_route,depart_route);
