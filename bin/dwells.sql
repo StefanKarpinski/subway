@@ -1,28 +1,16 @@
-drop table dwells, dwells_aggregate cascade;
-
-create temp table dwells_nonzero as select
+create table dwells as select
 	trip, route, code,
 	i.time as time_in,
 	o.time as time_out,
 	o.time - i.time as time
-from trips natural join route_trips
-	join stops_indexed i using (trip)
-	join stops_indexed o using (trip,code)
+from trips
+	join stops i using (trip)
+	join stops o using (trip,code,stop)
 where
-	i.index + 1 = o.index;
+	(i.type = 'A' and o.type = 'D') or
+	(i.type = 'T' and o.type = 'T');
 
-create temp view dwells_zero as select
-	trip, route, code,
-	time as time_in,
-	time as time_out,
-	0 as time
-from trips natural join route_trips
-	join stops using (trip);
-
-create table dwells as
-	select * from dwells_nonzero union
-	select * from dwells_zero;
-
+drop table dwells_aggregate cascade;
 create table dwells_aggregate as select
 	route, code,
 	avg(time) as avg_time,

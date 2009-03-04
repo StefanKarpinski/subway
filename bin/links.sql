@@ -1,5 +1,4 @@
-drop table links, links_aggregate cascade;
-
+drop table links cascade;
 create table links as select
 	trip, route,
 	o.code as code_out,
@@ -7,13 +6,15 @@ create table links as select
 	o.time as time_out,
 	i.time as time_in,
 	i.time - o.time as time
-from trips natural join route_trips
-	join stops_indexed o using (trip)
-	join stops_indexed i using (trip)
+from trips
+	join stops o using (trip)
+	join stops i using (trip)
 where
-	o.code <> i.code and
-	o.index + 1 = i.index;
+	(o.type = 'D' or o.type = 'T') and
+	(i.type = 'A' or i.type = 'T') and
+	 o.stop + 1 = i.stop;
 
+drop table links_aggregate cascade;
 create table links_aggregate as select
 	route, code_out, code_in,
 	avg(time) as avg_time,
