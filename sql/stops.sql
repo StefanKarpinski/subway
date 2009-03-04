@@ -35,6 +35,7 @@ alter table stops add foreign key (code) references stations;
 
 create unique index stops_trip_stop_type_idx on stops (trip,stop,type);
 create unique index stops_trip_code_type_idx on stops (trip,code,type);
+create unique index stips_trip_time_idx on stops(trip,time);
 
 create index stops_trip_idx on stops (trip);
 create index stops_code_idx on stops (code);
