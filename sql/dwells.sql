@@ -13,8 +13,8 @@ where
 
 alter table dwells add primary key (trip,code);
 
-drop table if exists dwells_aggregate cascade;
-create table dwells_aggregate as select
+drop table if exists dwells_by_route cascade;
+create table dwells_by_route as select
 	route, code,
 	avg(time) as avg_time,
 	stddev_samp(time) as std_time,
@@ -24,4 +24,4 @@ create table dwells_aggregate as select
 from dwells group by route, code
 order by route, code;
 
-alter table dwells_aggregate add primary key (route,code);
+alter table dwells_by_route add primary key (route,code);

@@ -79,8 +79,8 @@ order by
 
 alter table station_xfers add primary key (code,arrive_trip,depart_trip);
 
-drop table if exists station_xfers_aggregate cascade;
-create table station_xfers_aggregate as select
+drop table if exists station_xfers_by_route cascade;
+create table station_xfers_by_route as select
 	code,
 	arrive_route,
 	depart_route,
@@ -93,7 +93,7 @@ from station_xfers
 group by code, arrive_route, depart_route
 order by code, arrive_route, depart_route;
 
-alter table station_xfers_aggregate add primary key (code,arrive_route,depart_route);
+alter table station_xfers_by_route add primary key (code,arrive_route,depart_route);
 
 create temp view stops_with_complex as select
 	stops.*, route, complex
@@ -179,8 +179,8 @@ order by
 alter table complex_xfers add primary key
 	(complex,arrive_code,depart_code,arrive_trip,depart_trip);
 
-drop table if exists complex_xfers_aggregate cascade;
-create table complex_xfers_aggregate as select
+drop table if exists complex_xfers_by_route cascade;
+create table complex_xfers_by_route as select
 	complex,
 	arrive_code,
 	depart_code,
@@ -195,5 +195,5 @@ from complex_xfers
 group by complex, arrive_code, depart_code, arrive_route, depart_route
 order by complex, arrive_code, depart_code, arrive_route, depart_route;
 
-alter table complex_xfers_aggregate add primary key
+alter table complex_xfers_by_route add primary key
 	(complex,arrive_code,depart_code,arrive_route,depart_route);

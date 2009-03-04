@@ -16,8 +16,8 @@ where
 
 alter table links add primary key (trip,depart_code,arrive_code);
 
-drop table if exists links_aggregate cascade;
-create table links_aggregate as select
+drop table if exists links_by_route cascade;
+create table links_by_route as select
 	route, depart_code, arrive_code,
 	avg(time) as avg_time,
 	stddev_samp(time) as std_time,
@@ -28,4 +28,4 @@ from links
 group by route, depart_code, arrive_code
 order by route, depart_code, arrive_code;
 
-alter table links_aggregate add primary key (route,depart_code,arrive_code);
+alter table links_by_route add primary key (route,depart_code,arrive_code);
