@@ -1,9 +1,29 @@
 #!/bin/zsh
 
-perl bin/parse.pl rtif/*/rtif.*..1.*
-cat bin/schema.sql | psql
+service=1
+
+perl bin/parse.pl rtif/*/rtif.*..${service}.*
+
+export PGDATABASE=subway
+dropdb $PGDATABASE
+createdb
+cat sql/schema.sql | psql -a
+
 for x in stations trips stops; do
-  cat data/$x.tab | psql -c "copy $x from stdin with null as 'NULL'"
+  cat data/$x.tab | psql -ac "copy $x from stdin with null as 'NULL'"
 done
-cat bin/complexes.sql | psql
-cat bin/fixup.sql | psql
+
+for x in \
+	fixup \
+	complexes \
+	walks \
+	stops \
+	routes \
+	dwells \
+	links \
+	sxfers \
+	cxfers \
+	views
+do	
+	cat sql/$x.sql | psql -a
+done
