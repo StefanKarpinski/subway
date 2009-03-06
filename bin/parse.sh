@@ -21,8 +21,6 @@ for x in \
 	routes \
 	dwells \
 	links \
-	sxfers \
-	cxfers \
 	views
 do	
 	cat sql/$x.sql | psql -a
