@@ -56,6 +56,7 @@ use constant TIME  => 3;
 
 our @arrivals;
 our %paired;
+our %seen;
 
 open STOPS, "psql -c '$stops_query' |" or die $!;
 while (<STOPS>) {
@@ -72,6 +73,7 @@ while (<STOPS>) {
 		for my $arrival (@arrivals) {
 			next if $paired{$arrival}{$route};
 			my @arrival = @{$arrival};
+			next if $seen{$arrival[TRIP],$trip,$arrival[CODE],$code};
 			next if $arrival[TRIP] == $trip;
 			my $walk_time = $walks{$arrival[CODE],$code}{time} or next;
 			next unless $arrival[TIME] + $walk_time <= $time;
@@ -80,6 +82,7 @@ while (<STOPS>) {
 				$arrival[CODE], $code,
 				$time - $arrival[TIME]
 			), "\n";
+			$seen{$arrival[TRIP],$trip,$arrival[CODE],$code}++;
 			$paired{$arrival}{$route}++;
 		}
 	}
