@@ -79,12 +79,12 @@ while (<STOPS>) {
 			my $type =
 				$arrival[TRIP] eq $trip ? 'dwell' :
 				$arrival[CODE] eq $code ? 'station' :
-				$walks{$arrival[CODE],$code}{same_complex} ? 'complex' : 'walk';
+				$walks{$arrival[CODE],$code}{same_complex} ? 'complex' : 'external';
 			print join(",",
-				$arrival[TRIP], $trip,
-				$arrival[CODE], $code,
-				$type,
-				$time - $arrival[TIME]
+				$arrival[ROUTE], $route,
+				$arrival[TRIP],  $trip,
+				$arrival[CODE],  $code,
+				$type, $time - $arrival[TIME]
 			), "\n";
 			$seen{$arrival[TRIP],$trip,$arrival[CODE],$code}++;
 			$paired{$arrival}{$route}++;

@@ -14,13 +14,9 @@ cat data/stations.csv | psql -ac "copy stations from stdin with null as '' csv h
 cat data/trips.tab | psql -ac "copy trips from stdin with null as 'NULL'"
 cat data/stops.tab | psql -ac "copy stops from stdin with null as 'NULL'"
 
-for x in \
-	fixup \
-	walks \
-	stops \
-	routes \
-	links \
-	views
-do	
+for x in fixup walks stops routes links xfers views; do
 	cat sql/$x.sql | psql -a
 done
+
+bin/xfers.pl
+bzcat data/xfers.csv.bz2 | psql -ac "copy xfers from stdin csv"
