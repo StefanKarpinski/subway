@@ -16,11 +16,9 @@ cat data/stops.tab | psql -ac "copy stops from stdin with null as 'NULL'"
 
 for x in \
 	fixup \
-	complexes \
 	walks \
 	stops \
 	routes \
-	dwells \
 	links \
 	views
 do	
