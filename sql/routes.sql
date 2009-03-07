@@ -1,8 +1,12 @@
 create temp sequence route_seq;
+
+drop table routes cascade;
 create table routes as select
-	nextval('route_seq') as route,
-	trip_line, direction, dest_code
-from trips group by trip_line, direction, dest_code;
+	nextval('route_seq') as route, *
+from (
+	select distinct trip_line, direction, dest_code from trips
+		order by trip_line, direction, dest_code
+) x;
 
 alter table routes add primary key (route);
 alter table trips drop column route;
