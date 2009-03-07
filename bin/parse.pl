@@ -48,7 +48,7 @@ our $service;
 our $trip = 0;
 our %codes;
 
-open our $stations, ">data/stations.tab" or croak $!;
+open our $stations, ">data/stations_rtif.tab" or croak $!;
 open our $trips, ">data/trips.tab" or croak $!;
 open our $stops, ">data/stops.tab" or croak $!;
 

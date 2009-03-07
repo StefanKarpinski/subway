@@ -1,15 +1,19 @@
 #!/bin/zsh
 
-service=1
+service=1 # weekdays
 
 perl bin/parse.pl rtif/*/rtif.*..${service}.*
 
 export PGDATABASE=subway
 dropdb $PGDATABASE
 createdb
-cat sql/schema.sql | psql -a
 
-for x in stations trips stops; do
+cat sql/schema.sql | psql -a
+cat data/stations.csv | \
+	perl -F, -aple '$#F=12; $_=join(",",@F)' | \
+	psql -ac "copy stations from stdin with null as '' csv header"
+
+for x in stations_rtif trips stops; do
   cat data/$x.tab | psql -ac "copy $x from stdin with null as 'NULL'"
 done
 
