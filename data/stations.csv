@@ -1,0 +1,469 @@
+code,dup,name,shortname,codename,line,borough,complex,x,y
+101,,242 St-Van Cortlandt Park,242,242_1,Broadway,Bronx,,620098,324240
+103,,238 St,238,238_1,Broadway,Bronx,,619474,322638
+104,,231 St,231,231_1,Broadway,Bronx,,618322,320370
+106,,225 St-Marble Hill,225,225_1,Broadway,Bronx,,616906,318792
+107,,215 St,215,215_1,Broadway,Manhattan,,615532,317082
+108,,207 St,207,207_1,Broadway,Manhattan,,614494,315204
+109,,Dyckman St,Dyckman,Dyckman_1,Broadway,Manhattan,,613006,314160
+110,,191 St,191,191_1,Broadway,Manhattan,,611794,311982
+111,,181 St,181,181_1,Broadway,Manhattan,,610480,309708
+112,,168 St-Washington Hts,168,168_1,Broadway,Manhattan,168 Street,608820,306694
+113,,157 St,157,157_1,Broadway,Manhattan,,607384,304050
+114,,145 St,145,145_1,Broadway,Manhattan,,605848,301272
+115,,137 St-City College,137,137_1,Broadway,Manhattan,,604834,299424
+116,,125 St,125,125_1,Broadway,Manhattan,,603700,297354
+117,,116 St-Columbia Univ.,116,116_1,Broadway,Manhattan,,602140,294528
+118,,Cathedral Parkway ,110,110_1,Broadway,Manhattan,,601372,293154
+119,,103 St,103,103_1,Broadway,Manhattan,,600868,291276
+120,,96 St,96,96_123,7 Av,Manhattan,,599898,289500
+121,,86 St,86,86_1,7 Av,Manhattan,,598666,287328
+122,,79 St,79,79_1,7 Av,Manhattan,,597688,285732
+123,,72 St,72,72_123,7 Av,Manhattan,,597160,283848
+124,,66 St-Lincoln Center,66,66_1,7 Av,Manhattan,,597134,282038
+125,,59 St-Columbus Circle,59,59_1,7 Av,Manhattan,Columbus Circle,597010,279879
+126,,50 St,50,50_1,7 Av,Manhattan,,596620,277554
+127,,42 St-Times Square,42,42_123,7 Av,Manhattan,Times Square,595813,275523
+128,,34 St-Penn Station,34,34_123,7 Av,Manhattan,,594673,273567
+129,,28 St,28,28_1,7 Av,Manhattan,,594052,272460
+130,,23 St,23,23_1,7 Av,Manhattan,,593404,271278
+131,,18 St,18,18_1,7 Av,Manhattan,,592792,270180
+132,,14 St,14,14_123,7 Av,Manhattan,14 St/6-7 Avs,592219,269145
+133,,Christopher St-Sheridan Sq,Christopher,Christopher_1,7 Av,Manhattan,,591526,267582
+134,,Houston St,Houston,Houston_1,7 Av,Manhattan,,590836,265740
+135,,Canal St,Canal,Canal_1,7 Av,Manhattan,,590566,263562
+136,,Franklin St,Franklin,Franklin_1,7 Av,Manhattan,,590386,262284
+137,,Chambers St,Chambers,Chambers_123,7 Av,Manhattan,,589744,260982
+138,,Cortlandt St,Cortlandt,Cortlandt_1,7 Av,Manhattan,,589448,259188
+139,,Rector St,Rector,Rector_1,7 Av,Manhattan,,588556,258210
+140,,South Ferry,SouthFerry,SouthFerry_1,7 Av,Manhattan,,588712,255642
+201,,241 St-Wakefield,241,241_2,WPR,Bronx,,633388,329346
+204,,Nereid Av (238 St),Nereid,Nereid_25,WPR,Bronx,,632308,327552
+205,,233 St,233,233_25,WPR,Bronx,,631450,325722
+206,,225 St,225,225_25,WPR,Bronx,,630616,323682
+207,,219 St,219,219_25,WPR,Bronx,,630004,322098
+208,,Gun Hill Road,GunHill,GunHill_25,WPR,Bronx,,629026,319884
+209,,Burke Av,Burke,Burke_25,WPR,Bronx,,628828,317712
+210,,Allerton Av,Allerton,Allerton_25,WPR,Bronx,,628822,315582
+211,,Pelham Parkway,PelhamPkwy,PelhamPkwy_25,WPR,Bronx,,628720,312396
+212,,Bronx Park East,BronxParkE,BronxParkE_25,WPR,Bronx,,628552,310344
+213,,East 180th St,East180,East180_25,WPR,Bronx,,627292,306570
+214,,East Tremont Av-West Farms Sq,ETremont,ETremont_25,WPR,Bronx,,625330,306495
+215,,174 St,174,174_25,WPR,Bronx,,623170,305316
+216,,Freeman St,Freeman,Freeman_25,WPR,Bronx,,622030,302718
+217,,Simpson St,Simpson,Simpson_25,WPR,Bronx,,621766,300546
+218,,Intervale Av,Intervale,Intervale_25,WPR,Bronx,,620632,299760
+219,,Prospect Av,Prospect,Prospect_25,WPR,Bronx,,619330,298836
+220,,Jackson Av,Jackson,Jackson_25,WPR,Bronx,,617584,297660
+221,,3 Av-149 St,3,3_25,WPR,Bronx,,614920,297522
+222,,149 St-Grand Concourse,149,149_25,WPR,Bronx,149 St/Gr Conc,612268,298428
+224,,135 St,135,135_23,Lenox,Manhattan,,608512,296772
+225,,125 St,125,125_23,Lenox,Manhattan,,607252,294486
+226,,116 St,116,116_23,Lenox,Manhattan,,606076,292380
+227,,Central Park North-110 St,110,110_23,Lenox,Manhattan,,605446,291222
+228,,Park Place,ParkPl,ParkPl_23,Clark St,Manhattan,Chambers/Park Pl/WTC,590200,259860
+229,,Fulton St,Fulton,Fulton_23,Clark St,Manhattan,Fulton St/Bway-Nassau,590536,258786
+230,,Wall St,Wall,Wall_23,Clark St,Manhattan,,589730,257674
+231,,Clark St-Brooklyn Hts,Clark,Clark_23,Clark St,Brooklyn,,594334,254136
+232,,Borough Hall,BoroHall,BoroHall_23,Clark St,Brooklyn,Borough Hall/Court St,595084,252780
+233,,Hoyt St-Fulton Mall,Hoyt,Hoyt_23,Clark St,Brooklyn,,596554,251622
+234,,Nevins St,Nevins,Nevins_2345,E Parkway,Brooklyn,,597706,250968
+235,,Atlantic Av,Atlantic,Atlantic_2345,E Parkway,Brooklyn,Atlantic/Pacific,598696,249240
+236,,Bergen St,Bergen,Bergen_23,E Parkway,Brooklyn,,599320,248100
+237,,Grand Army Plaza,GrArmyPlz,GrArmyPlz_23,E Parkway,Brooklyn,,601030,245088
+238,,E. Parkway-Brooklyn Museum,EParkway,EParkway_23,E Parkway,Brooklyn,,602812,244734
+239,,Franklin Av,Franklin,Franklin_2345,E Parkway,Brooklyn,Franklin/Botanic Garden,604126,244380
+241,,President St,President,President_25,Nostrand,Brooklyn,,606130,243468
+242,,Sterling St,Sterling,Sterling_25,Nostrand,Brooklyn,,606130,241644
+243,,Winthrop St,Winthrop,Winthrop_25,Nostrand,Brooklyn,,606310,239442
+244,,Church Av,Church,Church_25,Nostrand,Brooklyn,,606496,237162
+245,,Beverley Road,Beverley,Beverley_25,Nostrand,Brooklyn,,606664,235104
+246,,Newkirk Av,Newkirk,Newkirk_25,Nostrand,Brooklyn,,606826,233202
+247,,Flatbush Av-Bklyn College,Flatbush,Flatbush_25,Nostrand,Brooklyn,,607018,230634
+248,,Nostrand Av,Nostrand,Nostrand_3,E Parkway,Brooklyn,,606208,244086
+249,,Kingston Av,Kingston,Kingston_3,E Parkway,Brooklyn,,608518,243912
+250,,Utica Av,Utica,Utica_34,E Parkway,Brooklyn,,611206,243741
+251,,Sutter Av-Rutland Road,Sutter,Sutter_3,Livonia,Brooklyn,,613864,242322
+252,,Saratoga Av,Saratoga,Saratoga_3,Livonia,Brooklyn,,615796,241056
+253,,Rockaway Av,Rockaway,Rockaway_3,Livonia,Brooklyn,,617650,241392
+254,,Junius St,Junius,Junius_3,Livonia,Brooklyn,,619210,241692
+255,,Pennsylvania Av,Pennsylvania,Pennsylvania_3,Livonia,Brooklyn,,621760,242214
+256,,Van Siclen Av,VanSiclen,VanSiclen_3,Livonia,Brooklyn,,623302,242520
+257,,New Lots Av,NewLots,NewLots_3,Livonia,Brooklyn,,625000,242880
+301,,148 St-Lenox Terminal,148,148_3,Lenox Term,Manhattan,,610048,299568
+302,,145 St,145,145_3,Lenox,Manhattan,,609778,299088
+401,,Woodlawn,Woodlawn,Woodlawn_4,Jerome,Bronx,,625828,323496
+402,,Mosholu Parkway,Mosholu,Mosholu_4,Jerome,Bronx,,623968,320712
+405,,Bedford Park Boulevard,BedfordPk,BedfordPk_4,Jerome,Bronx,,622654,318366
+406,,Kingsbridge Road,Kingsbr,Kingsbr_4,Jerome,Bronx,,620500,316332
+407,,Fordham Road,Fordham,Fordham_4,Jerome,Bronx,,619480,314598
+408,,183 St,183,183_4,Jerome,Bronx,,618760,313110
+409,,Burnside Av,Burnside,Burnside_4,Jerome,Bronx,,617746,311340
+410,,176 St,176,176_4,Jerome,Bronx,,616546,309486
+411,,Mount Eden Av,MountEden,MountEden_4,Jerome,Bronx,,615658,307806
+412,,170 St,170,170_4,Jerome,Bronx,,614902,306330
+413,,167 St,167,167_4,Jerome,Bronx,,613906,304686
+414,,161 St-Yankee Stadium,161,161_4,Jerome,Bronx,161 St-Yankee Stadium,612628,301824
+415,,149 St-Grand Concourse,149,149_4,Jerome,Bronx,149 St/Gr Conc,612268,298428
+416,,138 St-Grand Concourse,138,138_45,Lexington,Bronx,,611458,296502
+418,,Fulton St,Fulton,Fulton_45,Lexington,Manhattan,Fulton St/Bway-Nassau,589932,259178
+419,,Wall St,Wall,Wall_45,Lexington,Manhattan,,589130,258043
+420,,Bowling Green,BowlingGr,BowlingGr_45,Lexington,Manhattan,,588400,256992
+423,,Borough Hall,BoroHall,BoroHall_45,Lexington,Brooklyn,Borough Hall/Court St,594910,252330
+501,,Dyre Av-Eastchester,Dyre,Dyre_5,Dyre,Bronx,,638710,323700
+502,,Baychester Av,Baychester,Baychester_5,Dyre,Bronx,,637018,320562
+503,,Gun Hill Road,GunHill,GunHill_5,Dyre,Bronx,,634660,317370
+504,,Pelham Parkway,PelhamPkwy,PelhamPkwy_5,Dyre,Bronx,,631906,312492
+505,,Morris Park,MorrisPark,MorrisPark_5,Dyre,Bronx,,630808,311682
+601,,Pelham Bay Park,PelhamBay,PelhamBay_6,Pelham,Bronx,,639946,311058
+602,,Buhre Av,Buhre,Buhre_6,Pelham,Bronx,,638728,309186
+603,,Middletown Road,Middletown,Middletown_6,Pelham,Bronx,,637282,307452
+604,,Westchester Sq-E Tremont Av,Westchester,Westchester_6,Pelham,Bronx,,635842,306474
+606,,Zerega Av,Zerega,Zerega_6,Pelham,Bronx,,634570,305094
+607,,Castle Hill Av,CastleHill,CastleHill_6,Pelham,Bronx,,633184,304134
+608,,Parkchester (East 177 St),Parkchester,Parkchester_6,Pelham,Bronx,,630382,303642
+609,,St. Lawrence Av,StLawrence,StLawrence_6,Pelham,Bronx,,628852,303216
+610,,Morrison-Soundview Avs,Morrison,Morrison_6,Pelham,Bronx,,626824,302424
+611,,Elder Av,Elder,Elder_6,Pelham,Bronx,,625546,302118
+612,,Whitlock Av,Whitlock,Whitlock_6,Pelham,Bronx,,623698,301806
+613,,Hunts Point Av,HuntsPoint,HuntsPoint_6,Pelham,Bronx,,622102,299316
+614,,Longwood Av,Longwood,Longwood_6,Pelham,Bronx,,620842,297630
+615,,East 149 St,East149,East149_6,Pelham,Bronx,,618658,296100
+616,,East 143 St-St Mary's St,East143,East143_6,Pelham,Bronx,,617626,294654
+617,,Cypress Av,Cypress,Cypress_6,Pelham,Bronx,,615796,293694
+618,,Brook Av,Brook,Brook_6,Pelham,Bronx,,614470,294438
+619,,138 St-3 Av,138,138_6,Pelham,Bronx,,612880,295338
+621,,125 St,125,125_456,Lexington,Manhattan,,609490,293256
+622,,116 St,116,116_6,Lexington,Manhattan,,608338,291150
+623,,110 St,110,110_6,Lexington,Manhattan,,607588,289752
+624,,103 St,103,103_6,Lexington,Manhattan,,606664,288108
+625,,96 St,96,96_6,Lexington,Manhattan,,605764,286488
+626,,86 St,86,86_456,Lexington,Manhattan,,604486,284160
+627,,77 St,77,77_6,Lexington,Manhattan,,603280,282054
+628,,68 St,68,68_6,Lexington,Manhattan,,602110,279954
+629,,59 St,59,59_456,Lexington,Manhattan,Lex Av-59 St,601000,277960
+630,,51 St,51,51_6,Lexington,Manhattan,Lex Av-51 St,599956,276060
+631,,42 St-Grand Central,42,42_456,Lexington,Manhattan,Grand Central,598489,274168
+632,,33 St,33,33_6,Lexington,Manhattan,,597166,272061
+633,,28 St,28,28_6,Lexington,Manhattan,,596560,270978
+634,,23 St,23,23_6,Lexington,Manhattan,,595903,269775
+635,,14 St-Union Square,14,14_456,Lexington,Manhattan,Union Sq,595054,267876
+636,,Astor Place-Cooper Union,Astor,Astor_6,Lexington,Manhattan,,594730,266238
+637,,Bleecker St,Bleecker,Bleecker_6,Lexington,Manhattan,Bway-Lafayette/Bleecker,593764,264792
+638,,Spring St,Spring,Spring_6,Lexington,Manhattan,,593098,263460
+639,,Canal St,Canal,Canal_6,Lexington,Manhattan,Canal St,592168,262038
+640,,Brooklyn Bridge-City Hall,BklynBr,BklynBr_456,Lexington,Manhattan,Chambers/Bklyn Bridge,591250,260187
+701,,Main St-Flushing,Main,Main_7,Flushing,Queens,,639460,276822
+702,,Willets Point Bl-Shea Stadium,Willets,Willets_7,Flushing,Queens,,635806,275280
+705,,111 St,111,111_7,Flushing,Queens,,632314,273894
+706,,103 St-Corona Plaza,103,103_7,Flushing,Queens,,630460,273306
+707,,Junction Boulevard,Junction,Junction_7,Flushing,Queens,,628546,273048
+708,,90 St-Elmhurst,90,90_7,Flushing,Queens,,626746,272826
+709,,82 St-Jackson Hts,82,82_7,Flushing,Queens,,624562,272424
+710,,74 St-Broadway,74,74_7,Flushing,Queens,Roosevelt Av/74 St,622456,272166
+711,,69 St (Fisk Av),69,69_7,Flushing,Queens,,621094,271980
+712,,61 St-Woodside,61,61_7,Flushing,Queens,,619102,271686
+713,,52 St (Lincoln Av),52,52_7,Flushing,Queens,,616606,271176
+714,,46 St (Bliss St),46,46_7,Flushing,Queens,,615004,270750
+715,,40 St (Lowery St),40,40_7,Flushing,Queens,,613360,271092
+716,,33 St (Rawson St),33,33_7,Flushing,Queens,,611278,271344
+718,R09,Queensboro Plaza,QBPlaza,QBPlaza_7NW,Flusg/Astoria,Queens,,609226,274074
+719,,45 Road-Courthouse Square,45,45_7,Flushing,Queens,,607618,271848
+720,,Hunter's Point Av,HuntersPt,HuntersPt_7,Flushing,Queens,,606400,270540
+721,,Vernon-Jackson Avs,Vernon,Vernon_7,Flushing,Queens,,605018,270344
+723,,42 St-Grand Central,GrCentral,GrCentral_7,Flushing,Manhattan,Grand Central,598499,274163
+724,,5 Av,5,5_7,Flushing,Manhattan,42 St/5-6 Avs,597490,274716
+725,,42 St-Times Square,TimesSq,TimesSq_7,Flushing,Manhattan,Times Square,595813,275523
+901,,Grand Central Station,GrCentral,GrCentral_S,42 St Shuttle,Manhattan,Grand Central,598576,274122
+902,,Times Square,Times,Times_S,42 St Shuttle,Manhattan,Times Square,595813,275523
+A02,,207 St-Inwood,207,207_A,Wash Hts,Manhattan,,613948,316398
+A03,,Dyckman St,Dyckman,Dyckman_A,Wash Hts,Manhattan,,612268,315588
+A05,,190 St-Overlook Terrace,190,190_A,Wash Hts,Manhattan,,610216,312474
+A06,,181 St,181,181_A,Wash Hts,Manhattan,,609232,310242
+A07,,175 St-GWB Bus Term,175,175_A,Wash Hts,Manhattan,,608809,308892
+A09,,168 St-Washington Hts,168,168_AC,Wash Hts,Manhattan,168 Street,608820,306694
+A10,,163 St-Amsterdam Av,163,163_C,Wash Hts,Manhattan,,608758,304686
+A11,,155 St,155,155_C,Wash Hts,Manhattan,,608338,302916
+A14,,135 St,135,135_BC,CPW,Manhattan,,606566,298076
+A15,,125 St,125,125_ABCD,CPW,Manhattan,,605434,295788
+A16,,116 St,116,116_BC,CPW,Manhattan,,604498,293244
+A17,,Cathedral Parkway,110,110_BC,CPW,Manhattan,,603676,291756
+A18,,103 St,103,103_BC,CPW,Manhattan,,602830,290214
+A19,,96 St,96,96_BC,CPW,Manhattan,,602002,288705
+A20,,86 St,86,86_BC,CPW,Manhattan,,600772,286491
+A21,,81 St-Museum Nat'l History,81,81_BC,CPW,Manhattan,,599980,285084
+A22,,72 St,72,72_BC,CPW,Manhattan,,598828,282960
+A24,,59 St-Columbus Circle,59,59_ABCD,CPW,Manhattan,Columbus Circle,597010,279879
+A25,,50 St,50,50_CE,8 Av,Manhattan,,596032,277878
+A27,,42 St-PA Bus Term.,42,42_ACE,8 Av,Manhattan,Times Square,595030,276039
+A28,,34 St-Penn Station,34,34_ACE,8 Av,Manhattan,,594004,274191
+A30,,23 St,23,23_CE,8 Av,Manhattan,,592712,271870
+A31,,14 St,14,14_ACE,8 Av,Manhattan,14 St/8 Av,591538,269760
+A33,,Spring St,Spring,Spring_CE,8 Av,Manhattan,,591202,264612
+A34,,Canal St-Holland Tunnel,Canal,Canal_ACE,8 Av,Manhattan,,590806,262719
+A36,,Chambers St,Chambers,Chambers_AC,8 Av,Manhattan,Chambers/Park Pl/WTC,589942,260436
+A38,,Broadway-Nassau St,BwayNassau,BwayNassau_AC,Cranberry,Manhattan,Fulton St/Bway-Nassau,590170,259023
+A40,,High St-Brooklyn Bridge,High,High_AC,Cranberry,Brooklyn,,595243,255285
+A41,,Jay St-Borough Hall,Jay,Jay_ACF,Crnbry/Rtgr,Brooklyn,,595957,252528
+A42,,Hoyt-Schermerhorn Sts,Hoyt,Hoyt_ACG,Fltn/Crstn,Brooklyn,,596260,251058
+A43,,Lafayette Av,Lafayette,Lafayette_C,Fulton St,Brooklyn,,599020,250362
+A44,,Clinton-Washington Avs,ClintonWash,ClintonWash_C,Fulton St,Brooklyn,,601879,249039
+A45,,Franklin Av,Franklin,Franklin_C,Fulton St,Brooklyn,Franklin/Fulton,604738,248220
+A46,,Nostrand Av,Nostrand,Nostrand_AC,Fulton St,Brooklyn,,606436,247920
+A47,,Kingston-Throop Avs,Kingston,Kingston_C,Fulton St,Brooklyn,,608905,247740
+A48,,Utica Av,Utica,Utica_AC,Fulton,Brooklyn,,611824,247554
+A49,,Ralph Av,Ralph,Ralph_C,Fulton St,Brooklyn,,614200,247380
+A50,,Rockaway Av,Rockaway,Rockaway_C,Fulton St,Brooklyn,,617011,247779
+A51,,Broadway Junction-E New York,BwayJcn,BwayJcn_AC,Fulton St,Brooklyn,Broadway Junction,620086,246678
+A52,,Liberty Av,Liberty,Liberty_C,Fulton St,Brooklyn,,621070,245748
+A53,,Van Siclen Av,VanSiclen,VanSiclen_C,Fulton,Brooklyn,,622792,245112
+A54,,Shepherd Av,Shepherd,Shepherd_C,Fulton St,Brooklyn,,625420,245640
+A55,,Euclid Av,Euclid,Euclid_AC,Fulton St,Brooklyn,,627898,246102
+A57,,Grant Av,Grant,Grant_A,Fulton St,Brooklyn,,629686,246426
+A59,,80-Hudson St,80,80_A,Fulton St,Queens,,631501,247533
+A60,,88 St (Boyd Av),88,88_A,Fulton St,Queens,,633772,247698
+A61,,Rockaway Boulevard,RockBlvd,RockBlvd_A,Fulton St,Queens,,635680,247914
+A63,,104 St (Oxford Av),104,104_A,Lefferts,Queens,,637546,248508
+A64,,111 St (Greenwood Av),111,111_A,Lefferts,Queens,,638917,249312
+A65,,Lefferts Boulevard,Lefferts,Lefferts_A,Lefferts,Queens,,641086,250044
+AQR,,Aqueduct Racetrack,AqueductRace,AqueductRace_A,Rockaway,Queens,,638232,243626
+B04,,21 St-Queensbridge,21,21_F,63 St,Queens,,608284,274692
+B06,,Roosevelt Island,RoosvltIs,RoosvltIs_F,63 St,Manhattan,,606928,278634
+B08,,Lexington Av,Lex,Lex_F,63 St,Manhattan,,601468,278808
+B10,,57 St,57,57_F,6 Av,Manhattan,,598492,278622
+B12,,9 Av,9,9_DM,West End,Brooklyn,,593806,235374
+B13,,Fort Hamilton Parkway,FtHamilton,FtHamilton_DM,West End,Brooklyn,,593890,233316
+B14,,50 St,50,50_DM,West End,Brooklyn,,593920,231606
+B15,,55 St,55,55_DM,West End,Brooklyn,,593710,230124
+B16,,62 St,62,62_DM,West End,Brooklyn,62 St/New Utrecht,593272,228072
+B17,,71 St,71,71_DM,West End,Brooklyn,,592702,225522
+B18,,79 St,79,79_DM,West End,Brooklyn,,592264,223194
+B19,,18 Av,18,18_DM,West End,Brooklyn,,591706,221298
+B20,,20 Av,20,20_DM,West End,Brooklyn,,592924,220338
+B21,,Bay Parkway,BayPkwy,BayPkwy_DM,West End,Brooklyn,,594166,219366
+B22,,25 Av,25,25_D,West End,Brooklyn,,596014,217932
+B23,,Bay 50 St,Bay50,Bay50_D,West End,Brooklyn,,597040,214500
+D01,,205 St-Norwood,205,205_D,Concourse,Bronx,,625705,318603
+D03,,Bedford Park Boulevard,BedfordPk,BedfordPk_BD,Concourse,Bronx,,623227,318261
+D04,,Kingsbridge Road,Kingsbr,Kingsbr_BD,Concourse,Bronx,,621574,316143
+D05,,Fordham Road,Fordham,Fordham_BD,Concourse,Bronx,,620608,314526
+D06,,182-183 Sts,182-183,182-183_BD,Concourse,Bronx,,619582,312192
+D07,,Tremont Av,Tremont,Tremont_BD,Concourse,Bronx,,618325,310065
+D08,,174-175 Sts,174-175,174-175_BD,Concourse,Bronx,,617074,308274
+D09,,170 St,170,170_BD,Concourse,Bronx,,615691,305370
+D10,,167 St,167,167_BD,Concourse,Bronx,,614728,304008
+D11,,161 St-Yankee Stadium,161,161_BD,Concourse,Bronx,161 St-Yankee Stadium,612802,301754
+D12,,155 St,155,155_BD,Concourse,Manhattan,,609478,302280
+D13,A12,145 St,145,145_ABCD,CPW,Manhattan,,607540,300648
+D14,,7 Av,7,7_BDE,53 St,Manhattan,,597067,278196
+D15,,47-50 Sts (Rock Ctr),47-50,47-50_BDFV,6 Av,Manhattan,,597358,276574
+D16,,42 St,42,42_BDFV,6 Av,Manhattan,42 St/5-6 Avs,596466,274962
+D17,,34 St-Herald Square,34,34_BDFV,6 Av,Manhattan,Herald Sq,595548,273298
+D18,,23 St,23,23_FV,6 Av,Manhattan,,594190,270864
+D19,,14 St,14,14_FV,6 Av,Manhattan,14 St/6-7 Avs,593251,269157
+D20,A32,West 4 St-Washington Sq,W4,W4_ABCDEFV,6Av/8Av,Manhattan,,592272,267036
+D21,,Broadway-Lafayette St,BwayLaf,BwayLaf_BDFV,Houston,Manhattan,Bway-Lafayette/Bleecker,593206,264612
+D22,,Grand St,Grand,Grand_BD,Chrystie St,Manhattan,,594004,261936
+D24,,Atlantic Av,Atlantic,Atlantic_BQ,Brighton,Brooklyn,Atlantic/Pacific,598696,249240
+D25,,7 Av,7,7_BQ,Brighton,Brooklyn,,599992,246936
+D26,,Prospect Park,ProspectPk,ProspectPk_BQ,Brighton,Brooklyn,,602863,241167
+D27,,Parkside Av,Parkside,Parkside_Q,Brighton,Brooklyn,,603070,238638
+D28,,Church Av,Church,Church_BQ,Brighton,Brooklyn,,602755,237054
+D29,,Beverley Road,Beverley,Beverley_Q,Brighton,Brooklyn,,602446,234810
+D30,,Cortelyou Road,Cortelyou,Cortelyou_Q,Brighton,Brooklyn,,602596,233796
+D31,,Newkirk Av,Newkirk,Newkirk_BQ,Brighton,Brooklyn,,602890,231774
+D32,,Av H,AvH,AvH_Q,Brighton,Brooklyn,,603202,229626
+D33,,Av J,AvJ,AvJ_Q,Brighton,Brooklyn,,603388,227892
+D34,,Av M,AvM,AvM_Q,Brighton,Brooklyn,,603814,225270
+D35,,Kings Highway,KingsHwy,KingsHwy_BQ,Brighton,Brooklyn,,604310,221912
+D37,,Av U,AvU,AvU_Q,Brighton ,Brooklyn,,604828,218340
+D38,,Neck Road,Neck,Neck_Q,Brighton,Brooklyn,,605038,216936
+D39,,Sheepshead Bay,Sheepshead,Sheepshead_BQ,Brighton,Brooklyn,,605191,214140
+D40,,Brighton Beach,Brighton,Brighton_BQ,Brighton,Brooklyn,,603391,210552
+D41,,Ocean Parkway,OceanPkwy,OceanPkwy_Q,Brighton,Brooklyn,,601156,210027
+D42,,West 8 St-NY Aquarium,West,West_FQ,CI Terminal,Brooklyn,,599098,209646
+D43,,Stillwell Av-Coney Isl.,Stillwell,Stillwell_DFNQ,CI Term,Brooklyn,,597769,209976
+E01,,World Trade Center,WTC,WTC_E,8Av-WTC,Manhattan,Chambers/Park Pl/WTC,589414,259500
+F01,,179 St-Jamaica,179,179_F,Hillside,Queens,,652423,259755
+F02,,169 St,169,169_F,Hillside,Queens,,649600,258915
+F03,,Parsons Boulevard,Parsons,Parsons_F,Hillside,Queens,,646843,257853
+F04,,Suthpin Boulevard,Suthpin,Suthpin_F,Hillside,Queens,,644836,257085
+F05,,Van Wyck Boulevard,VanWyck,VanWyck_F,Queens,Queens,,642574,258462
+F06,,Union Tpke-Kew Gdns,Union,Union_EF,Queens,Queens,,639079,260424
+F07,,75 Av (Puritan Av),75,75_F,Queens,Queens,,637384,261876
+F09,,23 St-Ely Av,23Ely,23Ely_EV,Queens,Queens,23 St/Court Sq,606928,272544
+F11,,Lexington Av,Lexington,Lexington_EV,53 St,Manhattan,Lex Av-51 St,600500,276354
+F12,,5 Av,5,5_EV,53 St,Manhattan,,599083,277101
+F14,,2 Av,2,2_F,Houston,Manhattan,,595045,263805
+F15,,Delancey St,Delancey,Delancey_F,Houston,Manhattan,Essex/Delancey,595516,262122
+F16,,East Broadway,EastBway,EastBway_F,Houston,Manhattan,,595117,260214
+F18,,York St,York,York_F,Houston,Brooklyn,,596056,255606
+F20,,Bergen St,Bergen,Bergen_FG,Prospect Pk,Brooklyn,,594988,250072
+F21,,Carroll St,Carroll,Carroll_FG,Prospect Pk,Brooklyn,,593809,247809
+F22,,Smith-9 Sts,Smith9,Smith9_FG,Prospct Pk,Brooklyn,,593044,245880
+F23,,4 Av,4,4_F,Prospect Pk,Brooklyn,9 St/4 Av,595594,244272
+F24,,7 Av-Park Slope,7,7_F,Prospect Pk,Brooklyn,,597562,243048
+F25,,15 St-Prospect Park,15,15_F,Prospct Pk,Brooklyn,,597841,240567
+F26,,Fort Hamilton Parkway,FortHamilton,FortHamilton_F,Prospct Pk,Brooklyn,,599236,237048
+F27,,Church Av,Church,Church_F,Prospect Pk,Brooklyn,,598117,234654
+F29,,Ditmas Av,Ditmas,Ditmas_F,Culver,Brooklyn,,598474,232023
+F30,,18 Av,18,18_F,Culver,Brooklyn,,598834,229548
+F31,,Av I,AvI,AvI_F,Culver,Brooklyn,,599056,228102
+F32,,Bay Parkway,BayPkwy,BayPkwy_F,Culver,Brooklyn,,599332,226278
+F33,,Av N,AvN,AvN_F,Culver,Brooklyn,,599680,223770
+F34,,Av P,AvP,AvP_F,Culver,Brooklyn,,599950,221874
+F35,,Kings Highway,KingsHwy,KingsHwy_F,Culver,Brooklyn,,600145,219780
+F36,,Av U,AvU,AvU_F,Culver,Brooklyn,,599914,217632
+F38,,Av X,AvX,AvX_F,Culver,Brooklyn,,599686,214998
+F39,,Neptune Av,Neptune,Neptune_F,Culver,Brooklyn,,599584,211398
+G05,,Jamaica Center,JamaicaCtr,JamaicaCtr_EJZ,Archer Av,Queens,,647956,256074
+G06,,Sutphin Boulevard,Sutphin,Sutphin_EJZ,Archer Av,Queens,,645658,255336
+G07,,Jamaica-Van Wyck,JamaicaVW,JamaicaVW_E,Archer Av,Queens,,643162,256026
+G08,,71-Continental Avs,71,71_EFRV,Queens,Queens,,635568,262908
+G09,,67 Av,67,67_RV,Queens,Queens,,633052,264876
+G10,,63 Drive-Rego Park,63,63_RV,Queens,Queens,,630739,266004
+G11,,Woodhaven Bl-Queens Mall,Woodhaven,Woodhaven_RV,Queens,Queens,,628282,267294
+G12,,Grand Av-Newtown,Grand,Grand_RV,Queens,Queens,,626338,268452
+G13,,Elmhurst Av,Elmhurst,Elmhurst_RV,Queens,Queens,,625396,270312
+G14,,Roosevelt Av-Jackson Heights,Roosevelt,Roosevelt_EFRV,Queens,Queens,Roosevelt Av/74 St,622330,272202
+G15,,65 St,65,65_RV,Queens,Queens,,620734,273036
+G16,,Northern Boulevard,Northern,Northern_RV,Queens,Queens,,618184,274494
+G18,,46 St,46,46_RV,Queens,Queens,,616310,275692
+G19,,Steinway St,Steinway,Steinway_RV,Queens,Queens,,614860,276600
+G20,,36 St,36,36_RV,Queens,Queens,,612328,274080
+G21,,Queens Plaza,QueensPlz,QueensPlz_ERV,Queens,Queens,,609865,273018
+G22,,Court Square,CourtSq,CourtSq_G,Crosstown,Queens,23 St/Court Sq,607894,272034
+G24,,21 St-Van Alst,21,21_G,Crosstown,Queens,,606598,271302
+G26,,Greenpoint Av,Greenpoint,Greenpoint_G,Crosstown,Brooklyn,,605020,266352
+G28,,Nassau Av,Nassau,Nassau_G,Crosstown,Brooklyn,,606034,263766
+G29,,Metropolitan Av,Metropolitan,Metropolitan_G,Crosstown,Brooklyn,Lorimer/Metropolitan,606448,260250
+G30,,Broadway,Broadway,Broadway_G,Crosstown,Brooklyn,,606172,257118
+G31,,Flushing Av,Flushing,Flushing_G,Crosstown,Brooklyn,,606286,255006
+G32,,Myrtle-Willoughby Avs,MyrtleWill,MyrtleWill_G,Crosstown,Brooklyn,,606532,253404
+G33,,Bedford-Nostrand Avs,BedfordNost,BedfordNost_G,Crosstown,Brooklyn,,605389,251331
+G34,,Classon Av,Classon,Classon_G,Crosstown,Brooklyn,,603496,251046
+G35,,Clinton-Washington Avs,ClintonWash,ClintonWash_G,Crosstown,Brooklyn,,601876,250776
+G36,,Fulton St,Fulton,Fulton_G,Crosstown,Brooklyn,,599020,250362
+H02,,Aqueduct-North Conduit Av,Aqueduct,Aqueduct_A,Rockaway,Queens,,638308,243084
+H03,,Howard Beach-JFK Airport,HowardBch,HowardBch_A,Rockaway,Queens,,639448,240678
+H04,,Broad Channel,BroadCh,BroadCh_AS,Rockaway,Queens,,643540,221598
+H06,,Beach 67 St-Gaston Av,B67,B67_A,Rockaway,Queens,,649132,215304
+H07,,Beach 60 St-Straiton Av,B60,B60_A,Rockaway,Queens,,650800,215898
+H08,,Beach 44 St-Frank Av,B44,B44_A,Rockaway,Queens,,654796,216522
+H09,,Beach 36 St-Edgemere,B36,B36_A,Rockaway,Queens,,656596,217182
+H10,,Beach 25 St-Wavecrest,B25,B25_A,Rockaway,Queens,,658510,218790
+H11,,Far Rockaway-Mott Av,FarRock,FarRock_A,Rockaway,Queens,,660724,220548
+H12,,Beach 90 St-Holland,B90,B90_AS,Rockaway,Queens,,644080,214092
+H13,,Beach 98 St-Playland,B98,B98_AS,Rockaway,Queens,,642526,213180
+H14,,Beach 105 St-Seaside,B105,B105_AS,Rockaway,Queens,,640666,212628
+H15,,Rockaway Park-B 116 St,RockPark,RockPark_AS,Rockaway,Queens,,637306,212112
+J12,,121 St,121,121_JZ,Jamaica,Queens,,639640,255216
+J13,,111 St,111,111_JZ,Jamaica,Queens,,637426,253938
+J14,,102-104 St,102-104,102-104_JZ,Jamaica,Queens,,635236,253278
+J15,,Woodhaven Boulevard,Woodhaven,Woodhaven_JZ,Jamaica,Queens,,633571,252873
+J16,,Forest Parkway,ForestPkwy,ForestPkwy_JZ,Jamaica,Queens,,631408,252360
+J17,,Elderts Lane,Elderts,Elderts_JZ,Jamaica,Queens,,629356,251922
+J19,,Cypress Hills,CypressHills,CypressHills_JZ,Jamaica,Brooklyn,,627274,251196
+J20,,Crescent St,Crescent,Crescent_JZ,Jamaica,Brooklyn,,627796,249090
+J21,,Norwood Av,Norwood,Norwood_JZ,Jamaica,Brooklyn,,625882,248382
+J22,,Cleveland St,Cleveland,Cleveland_JZ,Jamaica,Brooklyn,,624106,247662
+J23,,Van Siclen Av,VanSiclen,VanSiclen_JZ,Jamaica,Brooklyn,,622402,247038
+J24,,Alabama Av,Alabama,Alabama_JZ,Jamaica,Brooklyn,,620332,246696
+J27,,Broadway Junction,BwayJcn,BwayJcn_JZ,Broadway,Brooklyn,Broadway Junction,619162,246732
+J28,,Chauncey St,Chauncey,Chauncey_JZ,Broadway,Brooklyn,,616876,248688
+J29,,Halsey St,Halsey,Halsey_JZ,Broadway,Brooklyn,,615928,249912
+J30,,Gates Av,Gates,Gates_JZ,Broadway,Brooklyn,,613804,251490
+J31,,Kosciusko St,Kosciusko,Kosciusko_JZ,Broadway,Brooklyn,,612556,252426
+L01,,8 Av,8,8_L,14 St,Manhattan,14 St/8 Av,591538,269760
+L02,,6 Av,6,6_L,14 St,Manhattan,14 St/6-7 Avs,593128,268950
+L03,,Union Square,Union,Union_L,14 St,Manhattan,Union Sq,594643,268312
+L05,,3 Av,3,3_L,14 St,Manhattan,,595774,267438
+L06,,1 Av,1,1_L,14 St,Manhattan,,597058,266712
+L08,,Bedford Av,Bedford,Bedford_L,14 St,Brooklyn,,604114,261594
+L10,,Lorimer St,Lorimer,Lorimer_L,14 St,Brooklyn,Lorimer/Metropolitan,606448,260250
+L11,,Graham Av,Graham,Graham_L,14 St,Brooklyn,,607828,260424
+L12,,Grand St,Grand,Grand_L,14 St,Brooklyn,,608866,259458
+L13,,Montrose Av,Montrose,Montrose_L,14 St,Brooklyn,,609106,257886
+L14,,Morgan Av,Morgan,Morgan_L,14 St,Brooklyn,,611332,257412
+L15,,Jefferson St,Jefferson,Jefferson_L,14 St,Brooklyn,,614068,257352
+L16,,DeKalb Av,DeKalb,DeKalb_L,14 St,Brooklyn,,614818,256662
+L17,,Myrtle Av,Myrtle,Myrtle_L,14 St,Brooklyn,Myrtle/Wyckoff,616966,254847
+L19,,Halsey St,Halsey,Halsey_L,14 St,Brooklyn,,619180,253290
+L20,,Wilson Av,Wilson,Wilson_L,14 St,Brooklyn,,618772,251112
+L21,,Bushwick Av-Aberdeen St,Bushwick,Bushwick_L,14 St,Brooklyn,,618610,248730
+L22,,Broadway Junction,BwayJcn,BwayJcn_L,14 St,Brooklyn,Broadway Junction,619162,246732
+L24,,Atlantic Av,Atlantic,Atlantic_L,Canarsie,Brooklyn,,619138,246264
+L25,,Sutter Av,Sutter,Sutter_L,Canarsie,Brooklyn,,619648,243558
+L26,,Livonia Av,Livonia,Livonia_L,Canarsie,Brooklyn,,620014,241872
+L27,,New Lots Av,NewLots,NewLots_L,Canarsie,Brooklyn,,620350,240174
+L28,,East 105 St,East105,East105_L,Canarsie,Brooklyn,,620698,237084
+L29,,Rockaway Parkway,RockPkwy,RockPkwy_L,Canarsie,Brooklyn,,619480,235176
+M01,,Metropolitan Av-Middle Vlg,Metropolitan,Metropolitan_M,Myrtle,Queens,,623914,259524
+M04,,Fresh Pond Road,FreshPond,FreshPond_M,Myrtle,Queens,,621112,256974
+M05,,Forest Av,Forest,Forest_M,Myrtle,Queens,,619486,256734
+M06,,Seneca Av,Seneca,Seneca_M,Myrtle,Queens,,618070,256092
+M08,,Wyckoff Av,Wyckoff,Wyckoff_M,Myrtle,Brooklyn,Myrtle/Wyckoff,617116,254874
+M09,,Knickerbocker Av,Knickerbocker,Knickerbocker_M,Myrtle,Brooklyn,,615172,254640
+M10,,Central Av,Central,Central_M,Myrtle,Brooklyn,,613240,254430
+M11,,Myrtle Av-Broadway,Myrtle,Myrtle_JMZ,Broadway,Brooklyn,,610384,254010
+M12,,Flushing Av,Flushing,Flushing_JM,Broadway,Brooklyn,,608536,255366
+M13,,Lorimer St,Lorimer,Lorimer_JM,Broadway,Brooklyn,,606904,256590
+M14,,Hewes St,Hewes,Hewes_JM,Broadway,Brooklyn,,605446,257544
+M16,,Marcy Av,Marcy,Marcy_JMZ,Broadway,Brooklyn,,604048,258216
+M18,,Essex St,Essex,Essex_JMZ,Nassau St,Manhattan,Essex/Delancey,595516,262122
+M19,,Bowery,Bowery,Bowery_JMZ,Nassau St,Manhattan,,593914,262740
+M20,,Canal St,Canal,Canal_JMZ,Nassau St,Manhattan,Canal St,592324,261888
+M21,,Chambers St,Chambers,Chambers_JMZ,Nassau St,Manhattan,Chambers/Bklyn Bridge,590467,260541
+M22,,Fulton St,Fulton,Fulton_JMZ,Nassau St,Manhattan,Fulton St/Bway-Nassau,590124,258930
+M23,,Broad St,Broad,Broad_JMZ,Nassau St,Manhattan,,589268,257702
+N02,,8 Av,8,8_N,Sea Beach,Brooklyn,,589462,231150
+N03,,Fort Hamilton Parkway,FortHamilton,FortHamilton_N,Sea Beach,Brooklyn,,590884,229998
+N04,,New Utrecht Av,NewUtrecht,NewUtrecht_N,Sea Beach,Brooklyn,62 St/New Utrecht,593485,227907
+N05,,18 Av,18,18_N,Sea Beach,Brooklyn,,595660,226224
+N06,,20 Av,20,20_N,Sea Beach,Brooklyn,,596878,225270
+N07,,Bay Parkway,BayPkwy,BayPkwy_N,Sea Beach,Brooklyn,,596989,222897
+N08,,Kings Highway,KingsHwy,KingsHwy_N,Sea Beach,Brooklyn,,597946,220542
+N09,,Av U,AvU,AvU_N,Sea Beach,Brooklyn,,598444,217374
+N10,,86 St,86,86_N,Sea Beach,Brooklyn,,597862,216480
+Q01,,Canal St-Broadway,Canal,Canal_NQ,Broadway,Manhattan,Canal St,591988,262212
+R01,,Ditmars Blvd-Astoria,Ditmars,Ditmars_NW,Astoria,Queens,,617098,282870
+R03,,Astoria Blvd-Hoyt Av,Astoria,Astoria_NW,Astoria,Queens,,615106,280608
+R04,,30-Grand Av,30,30_NW,Astoria,Queens,,614074,279474
+R05,,Broadway,Broadway,Broadway_NW,Astoria,Queens,,612994,277650
+R06,,36-Washington Av,36,36_NW,Astoria,Queens,,611776,275718
+R08,,39-Beebe Av,39,39_NW,Astoria,Queens,,610888,274260
+R11,,Lexington Av,Lex,Lex_NRW,60 St,Manhattan,Lex Av-59 St,601204,277982
+R13,,5 Av,5,5_NRW,60 St,Manhattan,,599695,278736
+R14,,57 St,57,57_NQRW,Broadway,Manhattan,,597592,278817
+R15,,49 St,49,49_NRW,Broadway,Manhattan,,596575,276987
+R16,,42 St-Times Square,42,42_NQRW,Broadway,Manhattan,Times Square,595846,274998
+R17,,34 St-Herald Square,34,34_NQRW,Broadway,Manhattan,Herald Sq,595330,272910
+R18,,28 St,28,28_RW,Broadway,Manhattan,,595324,271758
+R19,,23 St,23,23_RW,Broadway,Manhattan,,595096,270378
+R20,,14 St-Union Square,14,14_NQRW,Broadway,Manhattan,Union Sq,595054,267876
+R21,,8 St-NYU,8,8_RW,Broadway,Manhattan,,594382,266496
+R22,,Prince St,Prince,Prince_RW,Broadway,Manhattan,,592924,264162
+R23,,Canal St,Canal,Canal_RW,Broadway,Manhattan,Canal St,591988,262212
+R24,,City Hall,CityHall,CityHall_RW,Broadway,Manhattan,,590320,260058
+R25,,Cortlandt St-WTC,Cortlandt,Cortlandt_RW,Broadway,Manhattan,,589267,259194
+R26,,Rector St,Rector,Rector_RW,Broadway,Manhattan,,588730,258132
+R27,,Whitehall St-South Ferry,Whitehall,Whitehall_RW,Broadway,Manhattan,,588661,256446
+R28,,Court St,Court,Court_MR,Montague,Brooklyn,Borough Hall/Court St,594514,252978
+R29,,Lawrence St-MetroTech,Lawrence,Lawrence_MR,Montague,Brooklyn,,596230,252198
+R30,,DeKalb Av,DeKalb,DeKalb_BMNQR,4 Av,Brooklyn,,597514,251442
+R31,,Pacific St,Pacific,Pacific_DMNR,4 Av,Brooklyn,Atlantic/Pacific,598288,249126
+R32,,Union St,Union,Union_MR,4 Av,Brooklyn,,597142,246834
+R33,,9 St,9,9_MR,4 Av,Brooklyn,9 St/4 Av,595594,244272
+R34,,Prospect Av,Prospect,Prospect_MR,4 Av,Brooklyn,,594466,242478
+R35,,25 St,25,25_MR,4 Av,Brooklyn,,592972,240630
+R36,,36 St,36,36_DMNR,4 Av,Brooklyn,,591202,238422
+R39,,45 St,45,45_R,4 Av,Brooklyn,,589744,236574
+R40,,53 St,53,53_R,4 Av,Brooklyn,,588466,234990
+R41,,59 St,59,59_NR,4 Av,Brooklyn,,587467,233715
+R42,,Bay Ridge Av,BayRidge,BayRidge_R,4 Av,Brooklyn,,585898,231204
+R43,,77 St,77,77_R,4 Av,Brooklyn,,585298,229302
+R44,,86 St,86,86_R,4 Av,Brooklyn,,584572,226878
+R45,,95 St-Bay Ridge,95,95_R,4 Av,Brooklyn,,583885,224667
+S01,,Franklin Av,Franklin,Franklin_S,Franklin S,Brooklyn,Franklin/Fulton,604738,248220
+S03,,Park Place,ParkPl,ParkPl_S,Franklin S,Brooklyn,,604462,245670
+S04,,Botanic Garden,BotanicGarden,BotanicGarden_S,Franklin S,Brooklyn,Franklin/Botanic Garden,604126,244380
