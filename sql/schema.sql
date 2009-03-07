@@ -1,26 +1,12 @@
 drop table if exists stations cascade;
 create table stations (
-	station text,
-	borough text,
-	line text,
-	complex text,
-	segment text,
-	stop_type text,
-	all_stop text,
-	notes text,
-	shortname text,
-	lines text,
-	codename text unique,
 	code text primary key,
-	dup text
-);
-
-drop table if exists stations_rtif cascade;
-create table stations_rtif (
-	line text,
-	code text primary key,
+	alt text,
+	name text,
 	short text,
-	long text,
+	line text,
+	borough text,
+	complex text,
 	x integer,
 	y integer
 );
@@ -31,9 +17,9 @@ create table trips (
 	line text,
 	service int,
 	direction text,
-	orig_code text references stations on delete cascade,
+	orig_code text,
 	orig_time real,
-	dest_code text references stations on delete cascade,
+	dest_code text,
 	dest_time real,
 	trip_line text
 );
@@ -41,7 +27,7 @@ create table trips (
 drop table if exists stops cascade;
 create table stops (
 	trip integer references trips on delete cascade,
-	code text references stations on delete cascade,
+	code text,
 	track text,
 	time real,
 	type text,

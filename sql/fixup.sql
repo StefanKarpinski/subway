@@ -1,7 +1,21 @@
-update stops set code='718' where code='R09';
+-- patch stop entries using alternate station codes --
 
-create temp view used_codes as select distinct code
-	from stops natural join stations
-	where x is not null and y is not null;
+update stops set code=stations.code
+	from stations where stops.code=stations.alt;
 
-delete from stations where code not in (select code from used_codes);
+alter table stops add foreign key (code)
+	references stations on delete cascade;
+
+-- generate fake AQR stop data --
+
+insert into stops select
+	trip,
+	'AQR' as code,
+	'01' as track,
+	time+1 as time,
+	type,
+	tp
+from trips join stops using (trip)
+where
+	direction='N' and code='H02' and
+	11*60 <= time and time <= 19*60;
