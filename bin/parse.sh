@@ -9,12 +9,10 @@ dropdb $PGDATABASE
 createdb
 
 cat sql/schema.sql | psql -a
-cat data/stations.csv | \
-	psql -ac "copy stations from stdin with null as '' csv header"
 
-for x in trips stops; do
-  cat data/$x.tab | psql -ac "copy $x from stdin with null as 'NULL'"
-done
+cat data/stations.csv | psql -ac "copy stations from stdin with null as '' csv header"
+cat data/trips.tab | psql -ac "copy trips from stdin with null as 'NULL'"
+cat data/stops.tab | psql -ac "copy stops from stdin with null as 'NULL'"
 
 for x in \
 	fixup \

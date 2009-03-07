@@ -11,7 +11,7 @@ alter table stops add foreign key (code)
 insert into stops select
 	trip,
 	'AQR' as code,
-	'01' as track,
+	track as track,
 	time+1 as time,
 	type,
 	tp
