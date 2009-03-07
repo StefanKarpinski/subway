@@ -14,8 +14,8 @@ our $feet_per_minute = FEET_PER_MILE/$minutes_per_mile;
 our $walk_query = <<PSQL;
 	copy (
 		select
-			arrive_code,
-			depart_code,
+			code_a as arrive_code,
+			code_b as depart_code,
 			pessimistic/$feet_per_minute,
 			same_complex
 		from walks

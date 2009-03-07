@@ -1,13 +1,13 @@
 drop table walks cascade;
 create table walks as select
-	arrive.code as arrive_code,
-	depart.code as depart_code,
-	coalesce(depart.complex = arrive.complex, false) as same_complex,
-	sqrt(power(arrive.x-depart.x,2) + power(arrive.y-depart.y,2)) as euclidean,
-	abs(arrive.x-depart.x) + abs(arrive.y-depart.y) as manhattan,
-	sqrt(2)*sqrt(power(arrive.x-depart.x,2) + power(arrive.y-depart.y,2)) as pessimistic
+	a.code as code_a,
+	b.code as code_b,
+	coalesce(b.complex = a.complex, false) as same_complex,
+	sqrt(power(a.x-b.x,2) + power(a.y-b.y,2)) as euclidean,
+	abs(a.x-b.x) + abs(a.y-b.y) as manhattan,
+	sqrt(2)*sqrt(power(a.x-b.x,2) + power(a.y-b.y,2)) as pessimistic
 from
-	stations arrive,
-	stations depart;
+	stations a,
+	stations b;
 
-alter table walks add primary key (depart_code,arrive_code);
+alter table walks add primary key (code_a,code_b);
