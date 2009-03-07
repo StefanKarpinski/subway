@@ -261,7 +261,7 @@ D16,,42 St,42,6 Av,Manhattan,42 St/5-6 Avs,596466,274962
 D17,,34 St-Herald Square,34,6 Av,Manhattan,Herald Sq,595548,273298
 D18,,23 St,23,6 Av,Manhattan,,594190,270864
 D19,,14 St,14,6 Av,Manhattan,14 St/6-7 Avs,593251,269157
-D20,A32,West 4 St-Washington Sq,W4,6Av/8Av,Manhattan,,592272,267036
+D20,A32,West 4 St-Washington Sq,W4,6/8 Av,Manhattan,,592272,267036
 D21,,Broadway-Lafayette St,BwayLaf,Houston,Manhattan,Bway-Lafayette/Bleecker,593206,264612
 D22,,Grand St,Grand,Chrystie St,Manhattan,,594004,261936
 D24,,Atlantic Av,Atlantic,Brighton,Brooklyn,Atlantic/Pacific,598696,249240
@@ -276,14 +276,14 @@ D32,,Av H,AvH,Brighton,Brooklyn,,603202,229626
 D33,,Av J,AvJ,Brighton,Brooklyn,,603388,227892
 D34,,Av M,AvM,Brighton,Brooklyn,,603814,225270
 D35,,Kings Highway,KingsHwy,Brighton,Brooklyn,,604310,221912
-D37,,Av U,AvU,Brighton ,Brooklyn,,604828,218340
+D37,,Av U,AvU,Brighton,Brooklyn,,604828,218340
 D38,,Neck Road,Neck,Brighton,Brooklyn,,605038,216936
 D39,,Sheepshead Bay,Sheepshead,Brighton,Brooklyn,,605191,214140
 D40,,Brighton Beach,Brighton,Brighton,Brooklyn,,603391,210552
 D41,,Ocean Parkway,OceanPkwy,Brighton,Brooklyn,,601156,210027
 D42,,West 8 St-NY Aquarium,West,CI Terminal,Brooklyn,,599098,209646
-D43,,Stillwell Av-Coney Isl.,Stillwell,CI Term,Brooklyn,,597769,209976
-E01,,World Trade Center,WTC,8Av-WTC,Manhattan,Chambers/Park Pl/WTC,589414,259500
+D43,,Stillwell Av-Coney Isl.,Stillwell,CI Terminal,Brooklyn,,597769,209976
+E01,,World Trade Center,WTC,8 Av-WTC,Manhattan,Chambers/Park Pl/WTC,589414,259500
 F01,,179 St-Jamaica,179,Hillside,Queens,,652423,259755
 F02,,169 St,169,Hillside,Queens,,649600,258915
 F03,,Parsons Boulevard,Parsons,Hillside,Queens,,646843,257853
@@ -300,11 +300,11 @@ F16,,East Broadway,EastBway,Houston,Manhattan,,595117,260214
 F18,,York St,York,Houston,Brooklyn,,596056,255606
 F20,,Bergen St,Bergen,Prospect Pk,Brooklyn,,594988,250072
 F21,,Carroll St,Carroll,Prospect Pk,Brooklyn,,593809,247809
-F22,,Smith-9 Sts,Smith9,Prospct Pk,Brooklyn,,593044,245880
+F22,,Smith-9 Sts,Smith9,Prospect Pk,Brooklyn,,593044,245880
 F23,,4 Av,4,Prospect Pk,Brooklyn,9 St/4 Av,595594,244272
 F24,,7 Av-Park Slope,7,Prospect Pk,Brooklyn,,597562,243048
-F25,,15 St-Prospect Park,15,Prospct Pk,Brooklyn,,597841,240567
-F26,,Fort Hamilton Parkway,FortHamilton,Prospct Pk,Brooklyn,,599236,237048
+F25,,15 St-Prospect Park,15,Prospect Pk,Brooklyn,,597841,240567
+F26,,Fort Hamilton Parkway,FortHamilton,Prospect Pk,Brooklyn,,599236,237048
 F27,,Church Av,Church,Prospect Pk,Brooklyn,,598117,234654
 F29,,Ditmas Av,Ditmas,Culver,Brooklyn,,598474,232023
 F30,,18 Av,18,Culver,Brooklyn,,598834,229548
