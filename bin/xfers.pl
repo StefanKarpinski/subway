@@ -66,7 +66,7 @@ while (<STOPS>) {
 		push @arrivals, [$route,$trip,$code,$time];
 	}
 	if ($type eq 'D' or $type eq 'T') {
-		while (@arrivals and $time - $arrivals[0][TIME] > $transfer_window) {
+		while (@arrivals and $time - $arrivals[0][TIME] >= $transfer_window) {
 			my $arrival = shift @arrivals;
 			delete $paired{$arrival};
 		}
