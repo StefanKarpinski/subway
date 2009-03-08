@@ -77,7 +77,7 @@ while (<STOPS>) {
 			next if $seen{$arrival[TRIP],$trip,$arrival[CODE],$code};
 			my $walk_time = $walks{$arrival[CODE],$code}{time} or next;
 			next unless $arrival[TIME] + $walk_time <= $time;
-			my $type =
+			my $xfer_type =
 				$arrival[TRIP] eq $trip ? 'dwell' :
 				$arrival[CODE] eq $code ? 'station' :
 				$walks{$arrival[CODE],$code}{same_complex} ? 'complex' : 'external';
@@ -85,7 +85,8 @@ while (<STOPS>) {
 				$arrival[ROUTE], $route,
 				$arrival[TRIP],  $trip,
 				$arrival[CODE],  $code,
-				$type, $time - $arrival[TIME]
+				$xfer_type,
+				$time - $arrival[TIME]
 			), "\n";
 			$seen{$arrival[TRIP],$trip,$arrival[CODE],$code}++;
 			$paired{$arrival}{$route}++;
