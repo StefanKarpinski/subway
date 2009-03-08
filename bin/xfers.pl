@@ -75,7 +75,8 @@ while (<STOPS>) {
 			next if $paired{$arrival}{$route};
 			my @arrival = @{$arrival};
 			next if $seen{$arrival[TRIP],$trip,$arrival[CODE],$code};
-			my $walk_time = $walks{$arrival[CODE],$code}{time} or next;
+			next unless defined $walks{$arrival[CODE],$code};
+			my $walk_time = $walks{$arrival[CODE],$code}{time};
 			next unless $arrival[TIME] + $walk_time <= $time;
 			my $xfer_type =
 				$arrival[TRIP] eq $trip ? 'dwell' :
