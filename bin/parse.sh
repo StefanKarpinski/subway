@@ -19,4 +19,4 @@ for x in fixup walks stops routes links xfers views; do
 done
 
 bin/xfers.pl | bzip2 -9 > data/xfers.csv.bz2
-bzcat data/xfers.csv.bz2 | psql -ac "copy xfers from stdin csv"
+bzcat data/xfers.csv.bz2 | bin/batch.pl psql -ac "copy xfers from stdin csv"
