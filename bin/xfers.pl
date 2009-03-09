@@ -74,8 +74,9 @@ while (<STOPS>) {
 		for my $arrival (@arrivals) {
 			next if $paired{$arrival}{$route};
 			my @arrival = @{$arrival};
+			next unless exists $walks{$arrival[CODE],$code};
 			next if $seen{$arrival[TRIP],$trip,$arrival[CODE],$code};
-			next unless defined $walks{$arrival[CODE],$code};
+			next if $arrival[ROUTE] eq $route and $arrival[TRIP] ne $trip;
 			my $walk_time = $walks{$arrival[CODE],$code}{time};
 			next unless
 				$arrival[TRIP] eq $trip or
