@@ -17,6 +17,7 @@ for x in fixup walks stops routes links views; do
 	cat sql/$x.sql | psql -a
 done
 
-cat sql/xfers.sql | psql -a
+psql -ca "truncate table xfers"
 bin/xfers.pl | bzip2 -9 > data/xfers.csv.bz2
 bzcat data/xfers.csv.bz2 | bin/batch.pl psql -ac "copy xfers from stdin csv"
+cat sql/xfers.sql | psql -a

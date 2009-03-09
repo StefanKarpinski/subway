@@ -1,20 +1,31 @@
-create type xfer_type as enum (
-	'dwell',
-	'station',
-	'complex',
-	'tunnel',
-	'external'
-);
+create index xfers_routes_codes_idx on xfers
+	(arrive_route,depart_route,arrive_code,depart_code);
 
-drop table xfers cascade;
-create table xfers (
-	arrive_trip text references trips,
-	depart_trip text references trips,
-	arrive_route text references routes,
-	depart_route text references routes,
-	arrive_code text references stations,
-	depart_code text references stations,
-	type xfer_type,
-	time real,
-	primary key (arrive_trip,depart_trip,arrive_code,depart_code)
-);
+drop table if exists xfers_by_route cascade;
+create table xfers_by_route as select
+	arrive_route,
+	depart_route,
+	arrive_code,
+	depart_code,
+	type,
+	avg(time) as avg_time,
+	stddev_samp(time) as stddev,
+	min(time) as min_time,
+	max(time) as max_time,
+	count(time) as count
+from xfers
+group by
+	arrive_route,
+	depart_route,
+	arrive_code,
+	depart_code,
+	type
+order by
+	arrive_route,
+	depart_route,
+	arrive_code,
+	depart_code,
+	type;
+
+alter table xfers_by_route add primary key
+	(arrive_route,depart_route,arrive_code,depart_code);
