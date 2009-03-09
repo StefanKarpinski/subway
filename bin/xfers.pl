@@ -85,8 +85,8 @@ while (<STOPS>) {
 				$arrival[CODE] eq $code ? 'station' :
 				$walks{$arrival[CODE],$code}{same_complex} ? 'complex' : 'external';
 			print join(",",
-				$arrival[ROUTE], $route,
 				$arrival[TRIP],  $trip,
+				$arrival[ROUTE], $route,
 				$arrival[CODE],  $code,
 				$xfer_type,
 				$time - $arrival[TIME]
