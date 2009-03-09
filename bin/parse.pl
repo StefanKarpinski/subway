@@ -45,8 +45,9 @@ sub print_record {
 
 our $line;
 our $service;
-our $trip = 0;
 our %codes;
+our %trips;
+our $trip;
 
 open our $stations, ">data/stations_rtif.tab" or croak $!;
 open our $trips, ">data/trips.tab" or croak $!;
@@ -74,6 +75,11 @@ sub geography {
 
 sub applicability { }
 
+sub trip_id {
+	my $prefix = join "-", @_;
+	sprintf "%s-%03d", $prefix, ++$trips{$prefix};
+}
+
 sub trip {
 	my $orig_code = string parse 8;
 	my $orig_time = timeval parse 8;
@@ -84,8 +90,9 @@ sub trip {
 	my $dest_time = timeval parse 8;
 	parse 10+6+12; # skip fields
 	my $trip_line = string parse 4;
+	$trip = trip_id $trip_line, $direction, $dest_code;
 	print_record $trips,
-		++$trip,	$line, $service, $direction,
+		$trip, $line, $service, $direction,
 		$orig_code,	$orig_time,	$dest_code,	$dest_time,
 		$trip_line;
 }
@@ -100,7 +107,7 @@ sub event {
 	my $timepoint = string parse 1;
 	$timepoint = $timepoint eq 'Y' ? 't' : 'f';
 	print_record $stops,
-		$trip,	$code, $track, $time,	$type, $timepoint;
+		$trip, $code, $track, $time, $type, $timepoint;
 }
 
 # main parsing loop

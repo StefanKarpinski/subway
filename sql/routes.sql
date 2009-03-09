@@ -1,16 +1,18 @@
-create temp sequence route_seq;
-
 drop table routes cascade;
 create table routes as select
-	nextval('route_seq') as route, *
+	trip_line ||'-'|| direction ||'-'|| dest_code as route,
+	trip_line, direction, dest_code
 from (
 	select distinct trip_line, direction, dest_code from trips
 		order by trip_line, direction, dest_code
 ) x;
 
 alter table routes add primary key (route);
+create unique index routes_trip_line_direction_dest_code_idx
+	on routes (trip_line,direction,dest_code);
+
 alter table trips drop column route;
-alter table trips add column route integer references routes;
+alter table trips add column route text references routes;
 
 update trips set route = routes.route
 	from routes where

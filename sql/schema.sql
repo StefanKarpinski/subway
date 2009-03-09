@@ -22,7 +22,7 @@ create type direction as enum ('N','S');
 
 drop table if exists trips cascade;
 create table trips (
-	trip integer primary key,
+	trip text primary key,
 	line text,
 	service int,
 	direction direction,
@@ -37,7 +37,7 @@ create type stop_type as enum ('A','T','D');
 
 drop table if exists stops cascade;
 create table stops (
-	trip integer references trips on delete cascade,
+	trip text references trips on delete cascade,
 	code text,
 	track text,
 	time real,
