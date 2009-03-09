@@ -6,6 +6,7 @@ use warnings;
 use constant HOURS_PER_DAY => 1440;
 use constant FEET_PER_MILE => 5280;
 
+our $base_change_time = 1;
 our $minutes_per_mile = 8;
 our $transfer_window = 20;
 our $max_stop_time = 1664; # could be queried
@@ -76,7 +77,9 @@ while (<STOPS>) {
 			next if $seen{$arrival[TRIP],$trip,$arrival[CODE],$code};
 			next unless defined $walks{$arrival[CODE],$code};
 			my $walk_time = $walks{$arrival[CODE],$code}{time};
-			next unless $arrival[TIME] + $walk_time <= $time;
+			next unless
+				$arrival[TRIP] eq $trip or
+				$arrival[TIME] + $base_change_time + $walk_time < $time;
 			my $xfer_type =
 				$arrival[TRIP] eq $trip ? 'dwell' :
 				$arrival[CODE] eq $code ? 'station' :
