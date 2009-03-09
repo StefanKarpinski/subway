@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 
+our $batch = 10000;
 our @lines;
 
 sub flush {
@@ -14,6 +15,6 @@ sub flush {
 
 while (<STDIN>) {
 	push @lines, $_;
-	flush if @lines >= 100000;
+	flush if @lines >= $batch;
 }
 flush if @lines;
