@@ -7,7 +7,7 @@ use constant HOURS_PER_DAY => 1440;
 use constant FEET_PER_MILE => 5280;
 
 our $base_change_time = 1;
-our $minutes_per_mile = 8;
+our $minutes_per_mile = 9;
 our $transfer_window = 20;
 our $max_stop_time = 1664; # could be queried
 
