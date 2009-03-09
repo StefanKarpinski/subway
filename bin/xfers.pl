@@ -6,7 +6,6 @@ use warnings;
 use constant HOURS_PER_DAY => 1440;
 use constant FEET_PER_MILE => 5280;
 
-our $max_walk_time = 10;
 our $minutes_per_mile = 8;
 our $transfer_window = 20;
 our $max_stop_time = 1664; # could be queried
@@ -20,7 +19,7 @@ our $walk_query = <<PSQL;
 			pessimistic/$feet_per_minute,
 			same_complex
 		from walks
-		where pessimistic/$feet_per_minute <= $max_walk_time
+		where pessimistic/$feet_per_minute <= $transfer_window
 	) to stdout csv;
 PSQL
 
