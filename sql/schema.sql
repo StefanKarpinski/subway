@@ -32,6 +32,8 @@ create table trips (
 	dest_time real,
 	trip_line text
 );
+create index trips_trip_line_direction_dest_code_idx
+	on trips (trip_line,direction,dest_code);
 
 create type stop_type as enum ('A','T','D');
 

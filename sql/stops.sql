@@ -28,7 +28,7 @@ from stops_old stop
 	left join stop_order using (trip,code)
 	natural join trip_bases
 order by trip, stop, time;
-drop table stops_old;
+drop table stops_old cascade;
 
 alter table stops add foreign key (trip) references trips;
 alter table stops add foreign key (code) references stations;
