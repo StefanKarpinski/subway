@@ -2,15 +2,13 @@ create type node_type as enum ('arrive','depart');
 
 drop table arrive_nodes cascade;
 create table arrive_nodes as select distinct
-	arrive_trip as trip,
-	arrive_code as code
-from xfers;
+	trip,	arrive_code as code
+from links;
 
 drop table depart_nodes cascade;
 create table depart_nodes as select distinct
-	depart_trip as trip,
-	depart_code as code
-from xfers;
+	trip, depart_code as code
+from links;
 
 drop table nodes cascade;
 create table nodes as select null::integer as index, * from (
@@ -23,15 +21,13 @@ update nodes set index=nextval('nodes_seq');
 
 drop table arrive_nodes_by_route cascade;
 create table arrive_nodes_by_route as select distinct
-	arrive_route as route,
-	arrive_code as code
-from xfers_by_route;
+	route, arrive_code as code
+from links_by_route;
 
 drop table depart_nodes_by_route cascade;
 create table depart_nodes_by_route as select distinct
-	depart_route as route,
-	depart_code as code
-from xfers_by_route;
+	route, depart_code as code
+from links_by_route;
 
 drop table nodes_by_route cascade;
 create table nodes_by_route as select null::integer as index, * from (
