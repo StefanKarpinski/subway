@@ -13,11 +13,14 @@ cat data/stations.csv | psql -ac "copy stations from stdin with null as '' csv h
 cat data/trips.tab | psql -ac "copy trips from stdin with null as 'NULL'"
 cat data/stops.tab | psql -ac "copy stops from stdin with null as 'NULL'"
 
-for x in fixup walks stops routes links views; do
-	cat sql/$x.sql | psql -a
-done
+cat sql/fixup.sql  | psql -a
+cat sql/walks.sql  | psql -a
+cat sql/stops.sql  | psql -a
+cat sql/routes.sql | psql -a
+cat sql/links.sql  | psql -a
+cat sql/views.sql  | psql -a
 
-psql -ca "truncate table xfers"
+psql -ac "truncate table xfers"
 bin/xfers.pl | bzip2 -9 > data/xfers.csv.bz2
 bzcat data/xfers.csv.bz2 | bin/batch.pl psql -ac "copy xfers from stdin csv"
 cat sql/xfers.sql | psql -a

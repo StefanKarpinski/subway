@@ -38,13 +38,10 @@ while (<WALK_TIMES>) {
 close WALK_TIMES;
 
 our $stops_query = <<PSQL;
-	create temp view stop_data as
-		select route, trip, code, time, type
-	from stops join trips using (trip);
 	copy (
 		select * from (
-				select route, trip, code, time, type from stop_data union
-				select route, trip, code, time + @{[HOURS_PER_DAY]}, type from stop_data
+				select trip, code, time, type from stops union
+				select trip, code, time + @{[HOURS_PER_DAY]}, type from stops
 					where time <= @{[$max_stop_time - HOURS_PER_DAY + $transfer_window]}
 		) x order by time
 	) to stdout csv;
@@ -62,7 +59,8 @@ our %seen;
 open STOPS, "psql -c '$stops_query' |" or die $!;
 while (<STOPS>) {
 	chomp;
-	my ($route,$trip,$code,$time,$type) = split /,/;
+	my ($trip,$code,$time,$type) = split /,/;
+	( my $route = $trip ) =~ s/-\w+$//;
 	if ($type eq 'A' or $type eq 'T') {
 		push @arrivals, [$route,$trip,$code,$time];
 	}
@@ -86,9 +84,8 @@ while (<STOPS>) {
 				$arrival[CODE] eq $code ? 'station' :
 				$walks{$arrival[CODE],$code}{same_complex} ? 'complex' : 'external';
 			print join(",",
-				$arrival[TRIP],  $trip,
-				$arrival[ROUTE], $route,
-				$arrival[CODE],  $code,
+				$arrival[TRIP], $trip,
+				$arrival[CODE], $code,
 				$xfer_type,
 				$time - $arrival[TIME]
 			), "\n";

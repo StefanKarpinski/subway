@@ -1,6 +1,6 @@
 drop table if exists links cascade;
 create table links as select
-	trip, route,
+	trip,
 	depart.code as depart_code,
 	arrive.code as arrive_code,
 	depart.time as depart_time,
@@ -16,6 +16,9 @@ where
 
 alter table links add primary key (trip,depart_code,arrive_code);
 
+create temp view links_with_route as
+	select *, regexp_replace(trip,'-[0-9A-Z]+$','') as route from links;
+
 drop table if exists links_by_route cascade;
 create table links_by_route as select
 	route, depart_code, arrive_code,
@@ -24,7 +27,7 @@ create table links_by_route as select
 	min(time) as min_time,
 	max(time) as max_time,
 	count(time) as count
-from links
+from links_with_route
 group by route, depart_code, arrive_code
 order by route, depart_code, arrive_code;
 
