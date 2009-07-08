@@ -15,7 +15,7 @@ create table xfers_by_route as select
 	depart_code,
 	type,
 	avg(time) as avg_time,
-	stddev_samp(time) as stddev,
+	stddev_samp(time) as std_time,
 	min(time) as min_time,
 	max(time) as max_time,
 	count(time) as count
